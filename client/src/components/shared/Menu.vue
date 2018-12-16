@@ -3,17 +3,7 @@
     <div class="pin-to-top">
       <div class="top-menu">
         <div class="top-menu-left">
-          <!-- <button
-            class="hamburger hamburger--collapse"
-            type="button"
-            @click="activeMenu = !activeMenu"
-            :class="{'is-active': activeMenu}"
-          >
-            <span class="hamburger-box">
-              <span class="hamburger-inner"></span>
-            </span>
-          </button>-->
-          <i class="fa fa-bars" @click="openNav()"></i>
+          <i class="fa fa-bars burger" @click="openNav()" style="cursor: pointer"></i>
           <span class="menu-title">MENU</span>
         </div>
         <div class="top-menu-logo">
@@ -29,10 +19,11 @@
     </div>
     <div id="mySidenav" class="sidenav">
       <a class="closebtn" @click="closeNav()">&times;</a>
-      <a href="#">About</a>
-      <a href="#">Services</a>
-      <a href="#">Clients</a>
-      <a href="#">Contact</a>
+      <router-link to="/">Главная</router-link>
+      <router-link to="/project">Проект</router-link>
+      <router-link to="/contact">Контакты</router-link>
+      <router-link to="/service">Сервис</router-link>
+      <router-link to="/news">Новости</router-link>
     </div>
   </div>
 </template>
@@ -62,7 +53,7 @@ export default {
     height: 100%;
 } */
 .pin-to-top {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 1;
@@ -82,7 +73,9 @@ export default {
   justify-content: space-between;
 }
 .menu-title {
+  font-family: "Clear Sans Bold", sans-serif;
   margin-left: 20px;
+  cursor: pointer;
 }
 .top-menu-right {
   width: 200px;
@@ -130,5 +123,17 @@ export default {
   .sidenav a {
     font-size: 18px;
   }
+}
+.top-menu-right i{
+  margin: 15px;
+  font-size: 18px;
+}
+.top-menu-right i:hover{
+  color: #fcd000;
+  cursor: pointer;
+}
+
+.burger:hover{
+  color: #fcd000;
 }
 </style>
