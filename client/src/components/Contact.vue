@@ -22,9 +22,9 @@
         <a class="closebtn" @click="closeNav()">&times;</a>
         <router-link to="/">Главная</router-link>
         <router-link to="/project">Проект</router-link>
-      <router-link to="/contact">Контакты</router-link>
-      <router-link to="/service">Сервис</router-link>
-      <router-link to="/news">Новости</router-link>
+        <router-link to="/contact">Контакты</router-link>
+        <router-link to="/service">Сервис</router-link>
+        <router-link to="/news">Новости</router-link>
       </div>
     </div>
     <div class="contact-container">
@@ -55,34 +55,34 @@
         >Связаться с нами</span>
         <div class="contacts-input">
           <div class="group">
-            <input type="text" required>
+            <input type="text" required v-model="name">
             <span class="highlight"></span>
             <span class="bar"></span>
             <label>Имя</label>
           </div>
 
           <div class="group">
-            <input type="text" required>
+            <input type="text" required v-model="email">
             <span class="highlight"></span>
             <span class="bar"></span>
             <label>Email</label>
           </div>
 
           <div class="group">
-            <input type="text" required>
+            <input type="text" required v-model="coment">
             <span class="highlight"></span>
             <span class="bar"></span>
             <label>Коментарий</label>
           </div>
         </div>
         <div class="contacts-footer">
-            <div class="button" >
+          <div class="button" @click="send()">
             <p class="text-button">ОТПРАВИТЬ</p>
-            </div>
+          </div>
         </div>
       </div>
       <div class="contacts-map">
-          <Map></Map>
+        <Map></Map>
       </div>
     </div>
   </div>
@@ -90,15 +90,31 @@
 <script>
 import Map from "./shared/Map";
 export default {
-    components:{
-        Map
-    },
+  components: {
+    Map
+  },
   data() {
     return {
-      activeMenu: false
+      activeMenu: false,
+      name: "",
+      email: "",
+      coment: ""
     };
   },
   methods: {
+    send() {
+      let data = {
+        name: this.name,
+        email: this.email,
+        coment: this.coment
+      };
+      console.log(data);
+      this.$axios
+        .post("https://solemiaphuket.herokuapp.com/api/send-mail", data)
+        .then(response => {
+          console.log(response);
+        });
+    },
     openNav() {
       document.getElementById("mySidenav").style.width = "250px";
     },
@@ -218,14 +234,13 @@ export default {
   font-family: "Anglecia Pro Display";
   text-align: center;
   z-index: 2;
-
 }
 
-.contact-container-subtitle{
-    font-size: 14px;
-color: #ffffff;
-font-family: "Clear Sans Thin";
-text-align: center;
-z-index: 2;
+.contact-container-subtitle {
+  font-size: 14px;
+  color: #ffffff;
+  font-family: "Clear Sans Thin";
+  text-align: center;
+  z-index: 2;
 }
 </style>

@@ -222,28 +222,28 @@
         >Связаться с нами</span>
         <div class="contacts-input">
           <div class="group">
-            <input type="text" required>
+            <input type="text" required v-model="name">
             <span class="highlight"></span>
             <span class="bar"></span>
             <label>Имя</label>
           </div>
 
           <div class="group">
-            <input type="text" required>
+            <input type="text" required v-model="email">
             <span class="highlight"></span>
             <span class="bar"></span>
             <label>Email</label>
           </div>
 
           <div class="group">
-            <input type="text" required>
+            <input type="text" required v-model="coment">
             <span class="highlight"></span>
             <span class="bar"></span>
             <label>Коментарий</label>
           </div>
         </div>
         <div class="contacts-footer">
-          <div class="button">
+          <div class="button" @click="send()">
             <p class="text-button">ОТПРАВИТЬ</p>
           </div>
         </div>
@@ -261,6 +261,35 @@ export default {
   components: {
     Menu,
     Map
+  },
+  data() {
+    return {
+      activeMenu: false,
+      name: "",
+      email: "",
+      coment: ""
+    };
+  },
+  methods: {
+    send() {
+      let data = {
+        name: this.name,
+        email: this.email,
+        coment: this.coment
+      };
+      console.log(data);
+      this.$axios
+        .post("https://solemiaphuket.herokuapp.com/api/send-mail", data)
+        .then(response => {
+          console.log(response);
+        });
+    },
+    openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+    },
+    closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
   }
 };
 </script>
