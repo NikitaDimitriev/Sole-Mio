@@ -7,13 +7,25 @@
           <span class="menu-title">MENU</span>
         </div>
         <div class="top-menu-logo">
-          <img src="@/assets/image/logo.png">
+          <img src="@/assets/image/sole-mio-logo3.png">
         </div>
         <div class="top-menu-right">
-          <i class="fa fa-facebook"></i>
-          <i class="fa fa-twitter"></i>
-          <i class="fa fa-vk"></i>
-          <i class="fa fa-instagram"></i>
+          <a
+            href="https://facebook.com/solemiophuketcondominium"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa fa-facebook"></i>
+          </a>
+          <!-- <i class="fa fa-twitter"></i> -->
+          <!-- <i class="fa fa-vk"></i> -->
+          <a
+            href="https://instagram.com/solemiophuketcondominium"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa fa-instagram"></i>
+          </a>
         </div>
       </div>
     </div>
@@ -22,8 +34,8 @@
       <router-link to="/">Главная</router-link>
       <router-link to="/project">Проект</router-link>
       <router-link to="/contact">Контакты</router-link>
-      <router-link to="/service">Сервис</router-link>
-      <router-link to="/news">Новости</router-link>
+      <!-- <router-link to="/service">Сервис</router-link> -->
+      <!-- <router-link to="/news">Новости</router-link> -->
     </div>
   </div>
 </template>
@@ -124,16 +136,16 @@ export default {
     font-size: 18px;
   }
 }
-.top-menu-right i{
+.top-menu-right i {
   margin: 15px;
   font-size: 18px;
 }
-.top-menu-right i:hover{
+.top-menu-right i:hover {
   color: #fcd000;
   cursor: pointer;
 }
 
-.burger:hover{
+.burger:hover {
   color: #fcd000;
 }
 </style>

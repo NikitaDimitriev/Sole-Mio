@@ -8,13 +8,25 @@
             <span class="menu-title">MENU</span>
           </div>
           <div class="top-menu-logo">
-            <img src="@/assets/image/logo-blue.png">
+            <img src="@/assets/image/sole-mio-logo3.png">
           </div>
           <div class="top-menu-right">
+            <a
+            href="https://facebook.com/solemiophuketcondominium"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i class="fa fa-facebook"></i>
-            <i class="fa fa-twitter"></i>
-            <i class="fa fa-vk"></i>
+          </a>
+          <!-- <i class="fa fa-twitter"></i> -->
+          <!-- <i class="fa fa-vk"></i> -->
+          <a
+            href="https://instagram.com/solemiophuketcondominium"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i class="fa fa-instagram"></i>
+          </a>
           </div>
         </div>
       </div>
@@ -23,8 +35,8 @@
         <router-link to="/">Главная</router-link>
         <router-link to="/project">Проект</router-link>
         <router-link to="/contact">Контакты</router-link>
-        <router-link to="/service">Сервис</router-link>
-        <router-link to="/news">Новости</router-link>
+        <!-- <router-link to="/service">Сервис</router-link>
+        <router-link to="/news">Новости</router-link> -->
       </div>
     </div>
     <div class="contact-container">
@@ -45,9 +57,9 @@
           Phuket 83110, Thailand
         </span>
         <span class="contacts-side-text">
-          Тел/факс: 8-10-66-7632-44-48;
-          +66-84-84-55-111.
-          info@solemia.pro
+          Тел/факс:  +66 81 73 71 687;
+          +66 84 84 22 111.
+          sale@solemiophuket.com
         </span>
         <span
           class="contacts-side-title"

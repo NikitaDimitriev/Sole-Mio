@@ -45,14 +45,15 @@
       </div>
       <div class="description-project-card">
         <ul>
-          <li>Квалифицированая охран</li>
-          <li>Фитнес центр</li>
-          <li>Лифт</li>
-          <li>Номера для некурящих</li>
-          <li>Кондиционер</li>
-          <li>Персональный стилист</li>
-          <li>Двухэтажный парккинг</li>
-          <li>Мотоциклетный комплекс</li>
+          <li>Парковка</li>
+          <li>Лобби/Ресепшен</li>
+          <li>Рекреационный Центр</li>
+          <li>Фитнес Зал</li>
+          <li>
+            Плавательный бассейн и терраса для
+            принятия солнечных ванн на крыше
+          </li>
+          <li>Ресторан и Бар</li>
         </ul>
       </div>
     </div>
@@ -65,30 +66,45 @@
         </span>
         <div class="advantages-card-icon-section">
           <div class="advantages-icon-block">
-            <img src="@/assets/image/serviceIcon1.png" style="margin: 10px; margin-bottom: -2px">
-            <span class="icon-description">Супер быстрый интернет</span>
+            <!-- <i class="fas fa-beach">&#127796;</i> -->
+            <img
+              src="@/assets/image/island-with-palm-trees.svg"
+              style="margin: 10px; margin-bottom: -2px"
+            >
+            <span class="icon-description">
+              Месторасположение в одной из самых престижных и развитых курортных
+              территорий острова Пхукет менее чем в 200 метрах от пляжа Банг Тао
+            </span>
           </div>
           <div class="advantages-icon-block">
-            <img src="@/assets/image/serviceIcon2.png" style="margin: 10px; margin-bottom: -2px">
-            <span class="icon-description">2 этажа паркинга</span>
+            <!-- <img src="@/assets/image/serviceIcon2.png" style="margin: 10px; margin-bottom: -2px"> -->
+            <i class="fa fa-line-chart" style="font-size: 45px"></i>
+            <span class="icon-description">Рост цен на квартиры на 30% к моменту запуска проекта</span>
           </div>
           <div class="advantages-icon-block">
-            <img src="@/assets/image/serviceIcon3.png" style="margin: 10px; margin-bottom: -2px">
-            <span class="icon-description">Фитнес центр</span>
+            <i class="fa fa-pie-chart" style="font-size: 45px"></i>
+            <span class="icon-description">Поэтапная рассрочка платежей и бесплатный пакет мебели</span>
           </div>
         </div>
         <div class="advantages-card-icon-section">
           <div class="advantages-icon-block">
-            <img src="@/assets/image/serviceIcon4.png" style="margin: 10px; margin-bottom: -2px">
-            <span class="icon-description">Кафе</span>
+            <!-- <img src="@/assets/image/serviceIcon4.png" style="margin: 10px; margin-bottom: -2px"> -->
+            <i class="fa fa-money" style="font-size: 45px"></i>
+            <span class="icon-description">Отсутсвие налогов на недвижимое имущество</span>
           </div>
           <div class="advantages-icon-block">
-            <img src="@/assets/image/serviceIcon5.png" style="margin: 10px; margin-bottom: -2px">
-            <span class="icon-description">2 км пляжа</span>
+            <!-- <img src="@/assets/image/serviceIcon5.png" style="margin: 10px; margin-bottom: -2px"> -->
+            <i class="fa fa-file-text-o" aria-hidden="true" style="font-size: 45px"></i>
+            <span
+              class="icon-description"
+            >Отельная лицензия и прозрачная программа арендного управления</span>
           </div>
           <div class="advantages-icon-block">
-            <img src="@/assets/image/serviceIcon6.png" style="margin: 10px; margin-bottom: -2px">
-            <span class="icon-description">Камера хранения</span>
+            <i class="fa fa-share" aria-hidden="true" style="font-size: 45px"></i>
+            <!-- <img src="@/assets/image/serviceIcon6.png" style="margin: 10px; margin-bottom: -2px"> -->
+            <span
+              class="icon-description"
+            >От 7% ежегодного гарантированного возврата инвестиций в течение 5 лет</span>
           </div>
         </div>
       </div>
@@ -154,7 +170,7 @@
           <span>5. Living area</span>
           <span>6. Bedroom</span>
           <span>7. Balcony</span>
-          <button class="button">Смотреть Больше</button>
+          <!-- <button class="button">Смотреть Больше</button> -->
         </div>
       </div>
       <img src="@/assets/image/planB2.png" style="float: right;height: 555px">
@@ -212,9 +228,9 @@
           Phuket 83110, Thailand
         </span>
         <span class="contacts-side-text">
-          Тел/факс: 8-10-66-7632-44-48;
-          +66-84-84-55-111.
-          info@solemia.pro
+          Тел/факс: +66 81 73 71 687;
+          +66 84 84 22 111.
+          sale@solemiophuket.com
         </span>
         <span
           class="contacts-side-title"
@@ -474,5 +490,13 @@ export default {
 }
 .plan-a-list {
   height: 600px;
+}
+.advantages-icon-block {
+  color: #000000;
+  display: flex;
+  justify-content: space-between;
+  margin: 15px;
+}
+.icon-description {
 }
 </style>

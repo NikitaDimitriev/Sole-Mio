@@ -47,9 +47,9 @@
             class="concept-content-text"
           >Пляж сам по себе тоже примечателен, поскольку речь идет о том участке Банг-Тао (второго по протяженности пляжа Пхукета), где до сих пор жива аутентичная пхукетская атмосфера. Вдоль побережья выстроились небольшие местные ресторанчики и регги-бары, где приятно будет встретить закат за едой и напитками на ласкающем ноги теплом песке. Если же хочется чего-то уровнем повыше, то достаточно небольшой прогулки к югу, где расположился Catch, один из лучших пляжных клубов острова. А на небольшом расстоянии к северу находится широкий ассортимент люксовых отелей Лагуны, славящейся своими изысканным ресторанами, СПА-центрами и полями для гольфа.</span>
         </div>
-        <div class="button">
+        <!-- <div class="button">
           <p class="text-button">ЧИТАТЬ БОЛЬШЕ</p>
-        </div>
+        </div> -->
       </div>
     </div>
     <div id="complex">
@@ -65,10 +65,12 @@
         <div class="complex-content-text-section">
           <span
             class="concept-content-text"
-          >Девелоперам на Пхукете приходится прикладывать немало усилий, чтобы выделить свои проекты из общего ряда предложений на богатом рынке островной недвижимости.</span>
-          <div class="button" style="border: none; margin-top: 30px">
+          >Sole Mio Condominium является совместным проектом надежной команды известных экспертов по
+недвижимости на острове Пхукет – девелоперской компании Phuket Asialand и агентства
+недвижимости Railand Property International.</span>
+          <!-- <div class="button" style="border: none; margin-top: 30px">
             <p class="text-button">ЧИТАТЬ БОЛЬШЕ</p>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="complex-img">
@@ -157,10 +159,9 @@
     <div id="projects">
       <span class="projects-title">РЕАЛИЗОВАНЫЕ ПРОЕКТЫ</span>
       <div class="projects-img" style="margin-top: 30px">
-        <img src="@/assets/image/projects1.png" alt>
-        <img src="@/assets/image/projects2.png" alt>
-        <img src="@/assets/image/projects3.png" alt>
-        <img src="@/assets/image/projects4.png" alt>
+        <img src="@/assets/image/Surin.png" alt>
+        <img src="@/assets/image/NewBandW.jpeg" alt>
+        <img src="@/assets/image/Andamaya_Logo.jpg" alt>
       </div>
     </div>
     <div id="contacts">
@@ -174,9 +175,9 @@
           Phuket 83110, Thailand
         </span>
         <span class="contacts-side-text">
-          Тел/факс: 8-10-66-7632-44-48;
-          +66-84-84-55-111.
-          info@solemia.pro
+          Тел/факс:  +66 81 73 71 687;
+          +66 84 84 22 111.
+          sale@solemiophuket.com
         </span>
         <span
           class="contacts-side-title"
@@ -583,5 +584,17 @@ input:focus ~ .highlight {
     width: 0;
     background: transparent;
   }
+}
+.projects-img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.projects-img img {
+  max-width: 300px;
+}
+.top-menu-logo{
+  height: 100px;
+  width: 106px;
 }
 </style>
