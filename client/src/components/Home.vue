@@ -188,14 +188,14 @@
             <input type="text" required v-model="name">
             <span class="highlight"></span>
             <span class="bar"></span>
-            <label>Имя</label>
+            <label style="font-family: 'Clear Sans Thin'">Имя</label>
           </div>
 
           <div class="group">
             <input type="text" required v-model="email">
             <span class="highlight"></span>
             <span class="bar"></span>
-            <label>Email</label>
+            <label style="font-family: 'Clear Sans Thin'">Email</label>
           </div>
 
           <div class="group">
@@ -215,8 +215,7 @@
         <Map></Map>
       </div>
     </div>
-<Footer></Footer>
-
+    <Footer></Footer>
   </div>
 </template>
 <script>
@@ -475,8 +474,13 @@ export default {
   position: relative;
   margin-bottom: 45px;
 }
+
+.group label{
+   font-family: 'Clear Sans Thin';
+}
 input {
   font-size: 18px;
+  font-family: "Clear Sans Thin";
   padding: 10px 10px 10px 5px;
   display: block;
   width: 300px;
@@ -611,6 +615,4 @@ input:focus ~ .highlight {
 .card__l {
   font-family: "Clear Sans Thin";
 }
-
-
 </style>

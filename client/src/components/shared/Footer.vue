@@ -39,25 +39,10 @@
             </a>
           </p>
         </div>
-        <div class="footer-top-section4">
-          <p class="footer-section-title">СТАТЬ О НАС</p>
-          <div class="article-footer" style="width:200px">
-            <img src="@/assets/image/footer1.png">
-            <span>Квартира мечты на Пхукете</span>
-          </div>
-          <div class="article-footer" style="margin-top: 39px; margin-bottom: 54px">
-            <img src="@/assets/image/footer2.png">
-            <span>
-              Каникулы на Пхукете: Novotel
-              Phuket Karon Beach Resort
-            </span>
-          </div>
-        </div>
       </div>
       <div class="footer-line"></div>
       <div class="footer-bottom">
         <span>© Sole Mio Condominium Bang Tao Beach Phuket, 2018. All rights reserved</span>
-        <span>mode by Svitlo</span>
       </div>
     </div>    
 </template>
@@ -91,12 +76,12 @@ export default {
 
 .footer-top-section1 {
   display: flex;
-  width: 25%;
+  width: 33%;
   height: 100%;
   flex-direction: column;
 }
 .footer-top-section2 {
-  width: 25%;
+  width: 33%;
   display: flex;
   height: 100%;
   flex-direction: column;
@@ -105,13 +90,7 @@ export default {
   font-size: 18px;
   color: #aaaaaa;
   font-family: "Clear Sans Thin";
-  width: 25%;
-  display: flex;
-  height: 100%;
-  flex-direction: column;
-}
-.footer-top-section4 {
-  width: 25%;
+  width: 33%;
   display: flex;
   height: 100%;
   flex-direction: column;
@@ -143,7 +122,7 @@ export default {
 
 .footer-bottom {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin: 28px 0 45px 0;
   font-size: 14px;
   color: #aaaaaa;

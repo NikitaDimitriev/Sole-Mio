@@ -4,7 +4,7 @@
       <div class="top-menu">
         <div class="top-menu-left">
           <i class="fa fa-bars burger" @click="openNav()"></i>
-          <span class="menu-title">MENU</span>
+          <span class="menu-title" @click="openNav()">MENU</span>
         </div>
         <div class="top-menu-logo">
           <img src="@/assets/image/sole-mio-logo3.png">
@@ -28,7 +28,7 @@
       </div>
     </div>
     <div id="mySidenav" class="sidenav">
-      <a class="closebtn" @click="closeNav()">&times;</a>
+      <span class="closebtn" @click="closeNav()">&times; <span style="font-size: 12px"> MENU </span></span>
       <router-link to="/">Главная</router-link>
       <router-link to="/project">Проект</router-link>
       <router-link to="/contact">Контакты</router-link>
@@ -48,20 +48,18 @@ export default {
   },
   methods: {
     openNav() {
-      document.getElementById("mySidenav").style.width = "250px";
+      document.getElementById("mySidenav").style.width = "40%";
+      document.getElementById("mySidenav").style.padding = "60px 0 0 125px";
     },
     closeNav() {
       document.getElementById("mySidenav").style.width = "0";
+      document.getElementById("mySidenav").style.padding = "0";
     }
   }
 };
 </script>
 
 <style lang="css">
-/* #menu{
-    width: 100%;
-    height: 100%;
-} */
 .pin-to-top {
   position: fixed;
   top: 0;
@@ -98,37 +96,41 @@ export default {
 }
 .sidenav {
   height: 100%;
-  width: 0;
+  width: 40%;
   position: fixed;
-  z-index: 1;
+  z-index: 6;
   top: 0;
   left: 0;
-  background-color: #111;
+  background-color: #fff;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
+  padding-left: 125px;
 }
 
 .sidenav a {
-  padding: 8px 8px 8px 32px;
+  padding: 8px 8px 8px 8px;
   text-decoration: none;
   font-size: 25px;
-  color: #818181;
+  color: #000;
   display: block;
   transition: 0.3s;
+  font-family: 'Clear Sans Bold';
+  margin-top: 50px;
 }
 
 .sidenav a:hover {
-  color: #f1f1f1;
+  color: #818181;
 }
 
 .sidenav .closebtn {
+  margin-top: 50px;
   position: absolute;
   top: 0;
-  right: 25px;
+  left: 125px;
   font-size: 36px;
-  margin-left: 50px;
   cursor: pointer;
+  font-family: 'Clear Sans Bold';
 }
 
 @media screen and (max-height: 450px) {
