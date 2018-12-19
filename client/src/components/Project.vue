@@ -40,7 +40,7 @@
             src="@/assets/image/10_Sole Mio reception.jpg"
             style="height: 100%; width: 100%"
             class="background-slider"
-          > -->
+          >-->
         </div>
         <div class="slide">Slide 2</div>
         <div class="slide">Slide 3</div>
@@ -181,11 +181,21 @@
           </div>
         </div>
       </div>
-      <img src="@/assets/image/17_Deluxe.jpg" v-if="sliderAindex === 1" class="animateScale">
-      <img src="@/assets/image/18_Deluxe.jpg" v-if="sliderAindex === 2" class="animateScale">
-      <img src="@/assets/image/19_Deluxe.jpg" v-if="sliderAindex === 3" class="animateScale">
-      <img src="@/assets/image/20_Deluxe.jpg" v-if="sliderAindex === 4" class="animateScale">
-      <img src="@/assets/image/21_Deluxe.jpg" v-if="sliderAindex === 5" class="animateScale">
+      <div class="plan-slider-img" v-if="sliderAindex === 1">
+        <img src="@/assets/image/17_Deluxe.jpg" class="animateScale">
+      </div>
+      <div class="plan-slider-img" v-if="sliderAindex === 2">
+        <img src="@/assets/image/18_Deluxe.jpg" class="animateScale">
+      </div>
+      <div class="plan-slider-img" v-if="sliderAindex === 3">
+        <img src="@/assets/image/19_Deluxe.jpg" class="animateScale">
+      </div>
+      <div class="plan-slider-img" v-if="sliderAindex === 4">
+        <img src="@/assets/image/20_Deluxe.jpg" class="animateScale">
+      </div>
+      <div class="plan-slider-img" v-if="sliderAindex === 5">
+        <img src="@/assets/image/21_Deluxe.jpg" class="animateScale">
+      </div>
     </div>
     <div class="plan-a-list">
       <div class="plan-a-list-left">
@@ -555,6 +565,11 @@ export default {
 
 .animateScale {
   animation: scale 0.5s;
+}
+
+.plan-slider-img {
+  width: 975px;
+  height: 650px;
 }
 
 @keyframes scale {
