@@ -1,44 +1,6 @@
 <template>
   <div id="contact-page">
-    <div id="menu">
-      <div class="pin-to-top" style="background: #fff;">
-        <div class="top-menu">
-          <div class="top-menu-left">
-            <i class="fa fa-bars burger" @click="openNav()" style="cursor: pointer"></i>
-            <span class="menu-title">MENU</span>
-          </div>
-          <div class="top-menu-logo">
-            <img src="@/assets/image/sole-mio-logo3.png">
-          </div>
-          <div class="top-menu-right">
-            <a
-            href="https://facebook.com/solemiophuketcondominium"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="fa fa-facebook"></i>
-          </a>
-          <!-- <i class="fa fa-twitter"></i> -->
-          <!-- <i class="fa fa-vk"></i> -->
-          <a
-            href="https://instagram.com/solemiophuketcondominium"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="fa fa-instagram"></i>
-          </a>
-          </div>
-        </div>
-      </div>
-      <div id="mySidenav" class="sidenav">
-        <a class="closebtn" @click="closeNav()">&times;</a>
-        <router-link to="/">Главная</router-link>
-        <router-link to="/project">Проект</router-link>
-        <router-link to="/contact">Контакты</router-link>
-        <!-- <router-link to="/service">Сервис</router-link>
-        <router-link to="/news">Новости</router-link> -->
-      </div>
-    </div>
+    <Menu></Menu>
     <div class="contact-container">
       <img src="@/assets/image/contact-bg.png" class="contact-page-img">
       <div class="contact-container-text">
@@ -57,7 +19,7 @@
           Phuket 83110, Thailand
         </span>
         <span class="contacts-side-text">
-          Тел/факс:  +66 81 73 71 687;
+          Тел/факс: +66 81 73 71 687;
           +66 84 84 22 111.
           sale@solemiophuket.com
         </span>
@@ -102,11 +64,13 @@
 </template>
 <script>
 import Map from "./shared/Map";
-import Footer from "./shared/Footer"
+import Menu from "./shared/Menu";
+import Footer from "./shared/Footer";
 export default {
   components: {
     Map,
-    Footer
+    Footer,
+    Menu
   },
   data() {
     return {

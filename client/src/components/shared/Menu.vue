@@ -1,13 +1,16 @@
 <template>
   <div id="menu">
-    <div class="pin-to-top">
+    <div class="pin-to-top" :class="{scrolled: scrolled}">
       <div class="top-menu">
         <div class="top-menu-left">
           <i class="fa fa-bars burger" @click="openNav()"></i>
           <span class="menu-title" @click="openNav()">MENU</span>
         </div>
         <div class="top-menu-logo">
-          <img src="@/assets/image/sole-mio-logo3.png">
+          <router-link to="/">
+            <img src="@/assets/image/logo-white.png" v-if="!scrolled">
+            <img src="@/assets/image/Logo_SoleMia_color.png" v-if="scrolled">
+          </router-link>
         </div>
         <div class="top-menu-right">
           <a
@@ -28,7 +31,10 @@
       </div>
     </div>
     <div id="mySidenav" class="sidenav">
-      <span class="closebtn" @click="closeNav()">&times; <span style="font-size: 12px"> MENU </span></span>
+      <span class="closebtn" @click="closeNav()">
+        &times;
+        <span style="font-size: 12px">MENU</span>
+      </span>
       <router-link to="/">Главная</router-link>
       <router-link to="/project">Проект</router-link>
       <router-link to="/contact">Контакты</router-link>
@@ -43,18 +49,30 @@ export default {
   name: "Menu",
   data() {
     return {
-      activeMenu: false
+      activeMenu: false,
+      scrolled: false
     };
   },
   methods: {
     openNav() {
       document.getElementById("mySidenav").style.width = "40%";
       document.getElementById("mySidenav").style.padding = "60px 0 0 125px";
+      document.getElementById("mySidenav").style.zIndex = "6";
     },
     closeNav() {
       document.getElementById("mySidenav").style.width = "0";
       document.getElementById("mySidenav").style.padding = "0";
+      document.getElementById("mySidenav").style.zIndex = "0";
+    },
+    handleScroll() {
+      this.scrolled = window.scrollY > 0;
     }
+  },
+  created() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.handleScroll);
   }
 };
 </script>
@@ -64,8 +82,13 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 5;
   width: 100%;
+}
+.scrolled{
+  background-color: #fff;
+  color: #000;
+  transition: 0.5s;
 }
 .top-menu {
   display: flex;
@@ -96,16 +119,14 @@ export default {
 }
 .sidenav {
   height: 100%;
-  width: 40%;
   position: fixed;
-  z-index: 6;
   top: 0;
   left: 0;
   background-color: #fff;
   overflow-x: hidden;
   transition: 0.5s;
-  padding-top: 60px;
-  padding-left: 125px;
+  width: 0;
+  padding: 0;
 }
 
 .sidenav a {
@@ -115,7 +136,7 @@ export default {
   color: #000;
   display: block;
   transition: 0.3s;
-  font-family: 'Clear Sans Bold';
+  font-family: "Clear Sans Bold";
   margin-top: 50px;
 }
 
@@ -130,7 +151,7 @@ export default {
   left: 125px;
   font-size: 36px;
   cursor: pointer;
-  font-family: 'Clear Sans Bold';
+  font-family: "Clear Sans Bold";
 }
 
 @media screen and (max-height: 450px) {
@@ -144,7 +165,6 @@ export default {
 .top-menu-right i {
   color: #fff;
   font-size: 22px;
-
 }
 .top-menu-right i:hover {
   color: #fcd000;
@@ -152,11 +172,21 @@ export default {
 }
 
 .burger {
+  font-size: 22px;
   color: #fff;
   cursor: pointer;
 }
 
 .burger:hover {
   color: #fcd000;
+}
+.scrolled .burger{
+  color: #000;
+}
+.scrolled .menu-title{
+  color: #000;
+}
+.scrolled i{
+  color: #000;
 }
 </style>

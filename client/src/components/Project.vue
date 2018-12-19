@@ -17,10 +17,30 @@
             </div>
           </div>
           <img
-            src="@/assets/image/project1.png"
+            src="@/assets/image/2_Rooftop pool _ terrace.jpg"
             style="height: 100%; width: 100%"
             class="background-slider"
           >
+          <!-- <img
+            src="@/assets/image/3_Rooftop pool _ terrace.jpg"
+            style="height: 100%; width: 100%"
+            class="background-slider"
+          >
+          <img
+            src="@/assets/image/6_Rooftop restaurant.jpg"
+            style="height: 100%; width: 100%"
+            class="background-slider"
+          >
+          <img
+            src="@/assets/image/7_Rooftop fitness center.jpg"
+            style="height: 100%; width: 100%"
+            class="background-slider"
+          >
+          <img
+            src="@/assets/image/10_Sole Mio reception.jpg"
+            style="height: 100%; width: 100%"
+            class="background-slider"
+          > -->
         </div>
         <div class="slide">Slide 2</div>
         <div class="slide">Slide 3</div>
@@ -140,26 +160,32 @@
           <div class="service-slide1-content">
             <div class="slide1-card-plan-a">
               <div class="indicators-service">
-                <span style="margin-right: 5px">&#10229;</span>
-                <span>&#10230;</span>
+                <span
+                  style="margin-right: 5px;cursor: pointer"
+                  @click="decreeceSliderAindex()"
+                >&#10229;</span>
+                <span @click="increeseSliderAindex()" style="cursor: pointer">&#10230;</span>
               </div>
-              <div class="controll-numbers" style="margin-top: 15px; margin-bottom: 54px;">
-                <span>01</span>
-                <span>02</span>
-                <span>03</span>
-                <span>04</span>
-                <span>05</span>
-                <span>06</span>
+              <div class="controll-numbers" style="margin-top: 15px; margin-bottom: 54px">
+                <span style="cursor: pointer" @click="sliderAindex = 1">01</span>
+                <span style="cursor: pointer" @click="sliderAindex = 2">02</span>
+                <span style="cursor: pointer" @click="sliderAindex = 3">03</span>
+                <span style="cursor: pointer" @click="sliderAindex = 4">04</span>
+                <span style="cursor: pointer" @click="sliderAindex = 5">05</span>
               </div>
               <span class="plan-slider-title">
                 Unit type A:
-                Deluxe, 56 m2
+                Deluxe, 57 m2
               </span>
             </div>
           </div>
         </div>
       </div>
-      <img src="@/assets/image/planA1.png">
+      <img src="@/assets/image/17_Deluxe.jpg" v-if="sliderAindex === 1" class="animateScale">
+      <img src="@/assets/image/18_Deluxe.jpg" v-if="sliderAindex === 2" class="animateScale">
+      <img src="@/assets/image/19_Deluxe.jpg" v-if="sliderAindex === 3" class="animateScale">
+      <img src="@/assets/image/20_Deluxe.jpg" v-if="sliderAindex === 4" class="animateScale">
+      <img src="@/assets/image/21_Deluxe.jpg" v-if="sliderAindex === 5" class="animateScale">
     </div>
     <div class="plan-a-list">
       <div class="plan-a-list-left">
@@ -173,7 +199,7 @@
           <!-- <button class="button">Смотреть Больше</button> -->
         </div>
       </div>
-      <img src="@/assets/image/planB2.png" style="float: right;height: 555px">
+      <img src="@/assets/image/Unit_type_A.png" style="float: right;height: 555px">
     </div>
     <div class="plan-a">
       <div class="plan-slider">
@@ -181,26 +207,32 @@
           <div class="service-slide1-content">
             <div class="slide1-card-plan-a">
               <div class="indicators-service">
-                <span style="margin-right: 5px">&#10229;</span>
-                <span>&#10230;</span>
+                <span
+                  style="margin-right: 5px; cursor: pointer"
+                  @click="decreeceSliderBindex()"
+                >&#10229;</span>
+                <span @click="increeseSliderBindex()" style="cursor: pointer">&#10230;</span>
               </div>
-              <div class="controll-numbers" style="margin-top: 15px; margin-bottom: 54px;">
-                <span>01</span>
-                <span>02</span>
-                <span>03</span>
-                <span>04</span>
-                <span>05</span>
-                <span>06</span>
+              <div class="controll-numbers" style="margin-top: 15px; margin-bottom: 54px">
+                <span style="cursor: pointer" @click="sliderBindex = 1">01</span>
+                <span style="cursor: pointer" @click="sliderBindex = 2">02</span>
+                <span style="cursor: pointer" @click="sliderBindex = 3">03</span>
+                <span style="cursor: pointer" @click="sliderBindex = 4">04</span>
+                <span style="cursor: pointer" @click="sliderBindex = 5">05</span>
               </div>
               <span class="plan-slider-title">
                 Unit type B:
-                Deluxe, 56 m2
+                Universal, 36 m2
               </span>
             </div>
           </div>
         </div>
       </div>
-      <img src="@/assets/image/planB1.png">
+      <img src="@/assets/image/12_Universal.jpg" v-if="sliderBindex === 1" class="animateScale">
+      <img src="@/assets/image/13_Universal.jpg" v-if="sliderBindex === 2" class="animateScale">
+      <img src="@/assets/image/14_Universal.jpg" v-if="sliderBindex === 3" class="animateScale">
+      <img src="@/assets/image/15_Universal.jpg" v-if="sliderBindex === 4" class="animateScale">
+      <img src="@/assets/image/16_Universal.jpg" v-if="sliderBindex === 5" class="animateScale">
     </div>
     <div class="plan-a-list">
       <div class="plan-a-list-left">
@@ -215,7 +247,7 @@
           <span>8. Balcony</span>
         </div>
       </div>
-      <img src="@/assets/image/planA2.png" style="float: right;height: 555px">
+      <img src="@/assets/image/Unit_type_B.png" style="float: right;height: 555px">
     </div>
     <div id="contacts">
       <div class="contacts-side">
@@ -286,7 +318,9 @@ export default {
       activeMenu: false,
       name: "",
       email: "",
-      coment: ""
+      coment: "",
+      sliderAindex: 1,
+      sliderBindex: 1
     };
   },
   methods: {
@@ -303,11 +337,29 @@ export default {
           console.log(response);
         });
     },
-    openNav() {
-      document.getElementById("mySidenav").style.width = "250px";
+    increeseSliderAindex() {
+      this.sliderAindex++;
+      if (this.sliderAindex > 5) {
+        this.sliderAindex = 1;
+      }
     },
-    closeNav() {
-      document.getElementById("mySidenav").style.width = "0";
+    decreeceSliderAindex() {
+      this.sliderAindex--;
+      if (this.sliderAindex < 1) {
+        this.sliderAindex = 5;
+      }
+    },
+    increeseSliderBindex() {
+      this.sliderBindex++;
+      if (this.sliderBindex > 5) {
+        this.sliderBindex = 1;
+      }
+    },
+    decreeceSliderBindex() {
+      this.sliderBindex--;
+      if (this.sliderBindex < 1) {
+        this.sliderBindex = 5;
+      }
     }
   }
 };
@@ -499,5 +551,27 @@ export default {
   display: flex;
   justify-content: space-between;
   margin: 15px;
+}
+
+.animateScale {
+  animation: scale 0.5s;
+}
+
+@keyframes scale {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 </style>
