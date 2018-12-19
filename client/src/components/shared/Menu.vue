@@ -3,7 +3,7 @@
     <div class="pin-to-top">
       <div class="top-menu">
         <div class="top-menu-left">
-          <i class="fa fa-bars burger" @click="openNav()" style="cursor: pointer"></i>
+          <i class="fa fa-bars burger" @click="openNav()"></i>
           <span class="menu-title">MENU</span>
         </div>
         <div class="top-menu-logo">
@@ -17,8 +17,6 @@
           >
             <i class="fa fa-facebook"></i>
           </a>
-          <!-- <i class="fa fa-twitter"></i> -->
-          <!-- <i class="fa fa-vk"></i> -->
           <a
             href="https://instagram.com/solemiophuketcondominium"
             target="_blank"
@@ -71,27 +69,32 @@ export default {
   z-index: 1;
   width: 100%;
 }
-.hamburger:focus {
-  outline: none;
-}
 .top-menu {
   display: flex;
-  padding: 24px 130px 0 130px;
+  padding: 24px 125px 0 125px;
   height: 130px;
-  justify-content: space-between;
+  justify-content: space-around;
   background-color: transparent;
 }
 .top-menu-left {
   justify-content: space-between;
+  margin-top: 51px;
 }
 .menu-title {
   font-family: "Clear Sans Bold", sans-serif;
   margin-left: 20px;
   cursor: pointer;
+  color: #fff;
+  font-size: 12px;
 }
+
+.menu-title:hover {
+  color: #fcd000;
+}
+
 .top-menu-right {
-  width: 200px;
-  justify-content: space-around;
+  margin-top: 51px;
+  justify-content: flex-end;
 }
 .sidenav {
   height: 100%;
@@ -137,11 +140,17 @@ export default {
   }
 }
 .top-menu-right i {
-  margin: 15px;
-  font-size: 18px;
+  color: #fff;
+  font-size: 22px;
+
 }
 .top-menu-right i:hover {
   color: #fcd000;
+  cursor: pointer;
+}
+
+.burger {
+  color: #fff;
   cursor: pointer;
 }
 

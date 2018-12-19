@@ -21,7 +21,7 @@
   font-size: 12px;
   letter-spacing: 2px;
   color: #2d5386;
-  font-family: "Clear Sans", sans-serif;
+  font-family: "Clear Sans Thin", sans-serif;
   cursor: pointer;
 }
 .button:hover{
@@ -29,4 +29,6 @@
   color: #fff;
   background: #2d5386
 }
+
+
 </style>

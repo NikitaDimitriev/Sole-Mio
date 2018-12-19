@@ -268,15 +268,18 @@
         <Map></Map>
       </div>
     </div>
+    <Footer></Footer>
   </div>
 </template>
 <script>
 import Menu from "./shared/Menu";
 import Map from "./shared/Map";
+import Footer from "./shared/Footer";
 export default {
   components: {
     Menu,
-    Map
+    Map,
+    Footer
   },
   data() {
     return {
@@ -496,7 +499,5 @@ export default {
   display: flex;
   justify-content: space-between;
   margin: 15px;
-}
-.icon-description {
 }
 </style>

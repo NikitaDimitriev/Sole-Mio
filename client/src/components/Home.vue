@@ -49,7 +49,7 @@
         </div>
         <!-- <div class="button">
           <p class="text-button">ЧИТАТЬ БОЛЬШЕ</p>
-        </div> -->
+        </div>-->
       </div>
     </div>
     <div id="complex">
@@ -58,19 +58,19 @@
           Современный
           компелекс на
         </span>
-        <span class="complex-card-title" style="font-weight: 1000">
+        <span class="complex-card-title" style="font-family: 'Anglecia Pro Display Bold'">
           лазурном берегу
           Пхукета
         </span>
         <div class="complex-content-text-section">
-          <span
-            class="concept-content-text"
-          >Sole Mio Condominium является совместным проектом надежной команды известных экспертов по
-недвижимости на острове Пхукет – девелоперской компании Phuket Asialand и агентства
-недвижимости Railand Property International.</span>
+          <span class="concept-content-text">
+            Sole Mio Condominium является совместным проектом надежной команды известных экспертов по
+            недвижимости на острове Пхукет – девелоперской компании Phuket Asialand и агентства
+            недвижимости Railand Property International.
+          </span>
           <!-- <div class="button" style="border: none; margin-top: 30px">
             <p class="text-button">ЧИТАТЬ БОЛЬШЕ</p>
-          </div> -->
+          </div>-->
         </div>
       </div>
       <div class="complex-img">
@@ -92,15 +92,15 @@
               </div>
               <div class="card__content">
                 <div class="card__body">
-                  <h3 class="card__title">Title</h3>
+                  <h3 class="card__title">Апартаменты с видом на море в Ката</h3>
                   <ul class="card__l">
-                    <li>Жилая площадь:</li>
+                    <li>Жилая площадь: от 200 м2</li>
                     <li>Спален: 2</li>
                   </ul>
                 </div>
                 <div class="card__footer">
-                  <div class="price price__bl">$ 61 000</div>
-                  <button class="button">Смотреть</button>
+                  <div class="price price__bl">$ 46 000</div>
+                  <button class="button">СМОТРЕТЬ</button>
                 </div>
               </div>
             </div>
@@ -116,15 +116,15 @@
               </div>
               <div class="card__content">
                 <div class="card__body">
-                  <h3 class="card__title">Title</h3>
+                  <h3 class="card__title">Апартаменты с видом на море в Ката</h3>
                   <ul class="card__l">
-                    <li>Жилая площадь:</li>
+                    <li>Жилая площадь: от 200 м2</li>
                     <li>Спален: 2</li>
                   </ul>
                 </div>
                 <div class="card__footer">
-                  <div class="price price__bl">$ 22 000</div>
-                  <button type="button" class="button">Смотреть</button>
+                  <div class="price price__bl">$ 761 000</div>
+                  <button type="button" class="button">СМОТРЕТЬ</button>
                 </div>
               </div>
             </div>
@@ -140,15 +140,15 @@
               </div>
               <div class="card__content">
                 <div class="card__body">
-                  <h3 class="card__title">Title</h3>
+                  <h3 class="card__title">Апартаменты с видом на море в Ката</h3>
                   <ul class="card__l">
-                    <li>Жилая площадь:</li>
+                    <li>Жилая площадь: от 200 м2</li>
                     <li>Спален: 2</li>
                   </ul>
                 </div>
                 <div class="card__footer">
-                  <div class="price price__bl">$ 46 000</div>
-                  <button type="button" class="button">Смотреть</button>
+                  <div class="price price__bl">$ 550 000</div>
+                  <button type="button" class="button">СМОТРЕТЬ</button>
                 </div>
               </div>
             </div>
@@ -175,7 +175,7 @@
           Phuket 83110, Thailand
         </span>
         <span class="contacts-side-text">
-          Тел/факс:  +66 81 73 71 687;
+          Тел/факс: +66 81 73 71 687;
           +66 84 84 22 111.
           sale@solemiophuket.com
         </span>
@@ -206,43 +206,49 @@
           </div>
         </div>
         <div class="contacts-footer">
-            <div class="button" @click="send()">
+          <div class="button" @click="send()">
             <p class="text-button">ОТПРАВИТЬ</p>
-            </div>
+          </div>
         </div>
       </div>
       <div class="contacts-map">
-          <Map></Map>
+        <Map></Map>
       </div>
     </div>
+<Footer></Footer>
+
   </div>
 </template>
 <script>
 import Menu from "./shared/Menu";
-import Map from "./shared/Map"
+import Map from "./shared/Map";
+import Footer from "./shared/Footer";
 export default {
   components: {
     Menu,
-    Map
+    Map,
+    Footer
   },
-  data(){
-    return{
-      name:'',
-      email:'',
-      coment: ''
-    }
+  data() {
+    return {
+      name: "",
+      email: "",
+      coment: ""
+    };
   },
-  methods:{
-    send(){
+  methods: {
+    send() {
       let data = {
         name: this.name,
         email: this.email,
         coment: this.coment
-      }
+      };
       console.log(data);
-      this.$axios.post('https://solemiaphuket.herokuapp.com/api/send-mail', data).then((response)=>{
-        console.log(response);
-      })
+      this.$axios
+        .post("https://solemiaphuket.herokuapp.com/api/send-mail", data)
+        .then(response => {
+          console.log(response);
+        });
     }
   }
 };
@@ -293,7 +299,7 @@ export default {
   height: 18px;
   font-size: 18px;
   color: #ffffff;
-  font-family: "Clear Sans";
+  font-family: "Clear Sans Thin";
 }
 
 .slide1-content-inner {
@@ -332,7 +338,7 @@ export default {
 }
 #concept {
   background-color: #d5d5d5;
-  width: 100vw;
+  width: 100%;
   height: 80vh;
 }
 .concept-content {
@@ -367,7 +373,7 @@ export default {
 
 #complex {
   background: #e0e0e0;
-  width: 100vw;
+  width: 100%;
   height: 80vh;
   display: flex;
   justify-content: center;
@@ -552,9 +558,9 @@ input:focus ~ .highlight {
   animation: inputHighlighter 0.3s ease;
 }
 
-.contacts-footer{
-    display: flex;
-    justify-content: center;
+.contacts-footer {
+  display: flex;
+  justify-content: center;
 }
 
 /* ANIMATIONS ================ */
@@ -585,16 +591,26 @@ input:focus ~ .highlight {
     background: transparent;
   }
 }
-.projects-img{
+.projects-img {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  width: 100%;
 }
 .projects-img img {
   max-width: 300px;
 }
-.top-menu-logo{
+.top-menu-logo {
   height: 100px;
   width: 106px;
 }
+.cards__item {
+  margin-bottom: 120px;
+}
+
+.card__l {
+  font-family: "Clear Sans Thin";
+}
+
+
 </style>

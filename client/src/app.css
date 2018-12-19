@@ -600,7 +600,14 @@ table {
 
 @font-face {
     font-family: "Anglecia Pro Display";
-    src: url(./assets/font/AngleciaProDisplayRegular.otf) format("otf");
+    src: url(./assets/font/AngleciaProDisplayRegular.otf) format("opentype");
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: "Anglecia Pro Display Bold";
+    src: url(./assets/font/AngleciaProDisplayBold.otf) format("opentype");
     font-weight: 400;
     font-style: normal
 }
@@ -1753,75 +1760,6 @@ img {
 .select-mob__item:focus,
 .select-mob__item:hover {
     background: #ebebeb
-}
-
-.footer {
-    position: relative;
-    -ms-flex-negative: 0;
-    flex-shrink: 0;
-    -ms-flex-positive: 0;
-    flex-grow: 0
-}
-
-.footer__top-in {
-    position: relative;
-    padding: 25px 15px 10px;
-    display: -ms-flexbox;
-    display: flex
-}
-
-.fnav__link:before,
-.footer__top-in:before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0
-}
-
-.footer__top-in:before {
-    right: 0;
-    background: #e5e5e5;
-    left: 0;
-    height: 1px
-}
-
-.footer__top-left {
-    width: calc(100% - 300px);
-    padding: 5px 0 0
-}
-
-.footer__top-right {
-    width: 300px;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -ms-flex-align: end;
-    align-items: flex-end
-}
-
-.footer__bottom {
-    background-color: #e8e8e8
-}
-
-.footer__bottom-in {
-    height: 80px;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -ms-flex-align: center;
-    align-items: center
-}
-
-.footer__bottom-left {
-    display: -ms-flexbox;
-    display: flex;
-    width: calc(100% - 140px)
-}
-
-.footer__messengers {
-    margin: 15px 0 0
 }
 
 .fnav {

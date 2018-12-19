@@ -97,13 +97,16 @@
         <Map></Map>
       </div>
     </div>
+    <Footer></Footer>
   </div>
 </template>
 <script>
 import Map from "./shared/Map";
+import Footer from "./shared/Footer"
 export default {
   components: {
-    Map
+    Map,
+    Footer
   },
   data() {
     return {
@@ -156,7 +159,7 @@ export default {
 }
 .top-menu {
   display: flex;
-  padding: 24px 130px 0 130px;
+  padding: 24px 125px 0 125px;
   height: 130px;
   justify-content: space-between;
   background-color: transparent;
@@ -170,8 +173,7 @@ export default {
   cursor: pointer;
 }
 .top-menu-right {
-  width: 200px;
-  justify-content: space-around;
+  justify-content: flex-end;
 }
 .sidenav {
   height: 100%;

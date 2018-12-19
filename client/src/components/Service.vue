@@ -397,7 +397,7 @@ export default {
   letter-spacing: 1px;
   line-height: 30px;
   color: #525252;
-  font-family: "Clear Sans";
+  font-family: "Clear Sans Thin";
   z-index: 1;
   position: absolute;
   top: 50%;
