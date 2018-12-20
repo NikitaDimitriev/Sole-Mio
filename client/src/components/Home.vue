@@ -214,8 +214,7 @@ export default {
       name: "",
       email: "",
       coment: "",
-      homeSliderIndex: 1,
-      interval: null
+      homeSliderIndex: 1
     };
   },
   methods: {
@@ -234,38 +233,23 @@ export default {
     },
     increeseSliderTop() {
       this.homeSliderIndex++;
-      clearInterval(this.interval);
-      this.interval = setInterval(() => {
-        this.increeseSliderTop();
-      }, 5000);
       if (this.homeSliderIndex > 2) {
         this.homeSliderIndex = 1;
       }
     },
     decreeceSliderTop() {
       this.homeSliderIndex--;
-      clearInterval(this.interval);
-      this.interval = setInterval(() => {
-        this.increeseSliderTop();
-      }, 5000);
       if (this.homeSliderIndex < 1) {
         this.homeSliderIndex = 2;
       }
     },
-    setIntervalSlide() {
-      this.interval = setInterval(() => {
-        this.increeseSliderTop();
-      }, 5000);
-    },
+
     scrollToA() {
       this.$router.push({path: '/project', hash:"#typeA"})
     },
     scrollToB() {
       this.$router.push({path: '/project', hash:"#typeB"})
     },
-  },
-  created() {
-    this.setIntervalSlide();
   }
 };
 </script>

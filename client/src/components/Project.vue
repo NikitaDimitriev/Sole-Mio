@@ -404,10 +404,6 @@ export default {
     },
     increeseSliderTop() {
       this.topSliderIndex++;
-      clearInterval(this.interval);
-      this.interval = setInterval(() => {
-        this.increeseSliderTop();
-      }, 5000);
       if (this.topSliderIndex > 5) {
         this.topSliderIndex = 1;
       }
@@ -418,11 +414,6 @@ export default {
       if (this.topSliderIndex < 1) {
         this.topSliderIndex = 5;
       }
-    },
-    setIntervalSlide() {
-      this.interval = setInterval(() => {
-        this.increeseSliderTop();
-      }, 5000);
     },
     showUnitImg(type) {
       if (type === "a") {
@@ -436,9 +427,6 @@ export default {
       this.bWrap = false;
     }
   },
-  created() {
-    this.setIntervalSlide();
-  }
 };
 </script>
 <style>
