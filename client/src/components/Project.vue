@@ -8,46 +8,54 @@
             <div class="slide1-content-inner">
               <span class="slide1-title">Добро пожаловать на борт –</span>
               <span class="slide1-title">Sole Mio поднимает паруса</span>
-              <span
+              <!-- <span
                 class="slide1-subtitle"
               >Девелоперам на Пхукете приходится прикладывать немало усилий, чтобы выделить свои</span>
               <span
                 class="slide1-subtitle"
-              >проекты из общего ряда предложений на богатом рынке островной недвижимости.</span>
+              >проекты из общего ряда предложений на богатом рынке островной недвижимости.</span>-->
             </div>
           </div>
-          <img
-            src="@/assets/image/2_Rooftop pool _ terrace.jpg"
-            style="height: 100%; width: 100%"
-            class="background-slider"
-          >
-          <!-- <img
-            src="@/assets/image/3_Rooftop pool _ terrace.jpg"
-            style="height: 100%; width: 100%"
-            class="background-slider"
-          >
-          <img
-            src="@/assets/image/6_Rooftop restaurant.jpg"
-            style="height: 100%; width: 100%"
-            class="background-slider"
-          >
-          <img
-            src="@/assets/image/7_Rooftop fitness center.jpg"
-            style="height: 100%; width: 100%"
-            class="background-slider"
-          >
-          <img
-            src="@/assets/image/10_Sole Mio reception.jpg"
-            style="height: 100%; width: 100%"
-            class="background-slider"
-          >-->
+          <div class="top-slider-img" v-if="topSliderIndex === 1">
+            <img
+              src="@/assets/image/2_Rooftop pool _ terrace.jpg"
+              style="height: 100%; width: 100%"
+              class="background-slider animateScale"
+            >
+          </div>
+          <div class="top-slider-img" v-if="topSliderIndex === 2">
+            <img
+              src="@/assets/image/3_Rooftop pool _ terrace.jpg"
+              style="height: 100%; width: 100%"
+              class="background-slider animateScale"
+            >
+          </div>
+          <div class="top-slider-img" v-if="topSliderIndex === 3">
+            <img
+              src="@/assets/image/6_Rooftop restaurant.jpg"
+              style="height: 100%; width: 100%"
+              class="background-slider animateScale"
+            >
+          </div>
+          <div class="top-slider-img" v-if="topSliderIndex === 4">
+            <img
+              src="@/assets/image/7_Rooftop fitness center.jpg"
+              style="height: 100%; width: 100%"
+              class="background-slider animateScale"
+            >
+          </div>
+          <div class="top-slider-img" v-if="topSliderIndex === 5">
+            <img
+              src="@/assets/image/10_Sole Mio reception.jpg"
+              style="height: 100%; width: 100%"
+              class="background-slider animateScale"
+            >
+          </div>
         </div>
-        <div class="slide">Slide 2</div>
-        <div class="slide">Slide 3</div>
       </div>
       <div class="indicators">
-        <span style="margin-right: 5px">&#10229;</span>
-        <span>&#10230;</span>
+        <span style="margin-right: 5px; cursor: pointer" @click="decreeceSliderTop()">&#10229;</span>
+        <span @click="increeseSliderTop()" style="cursor: pointer">&#10230;</span>
       </div>
     </div>
     <div class="description-project">
@@ -238,11 +246,21 @@
           </div>
         </div>
       </div>
-      <img src="@/assets/image/12_Universal.jpg" v-if="sliderBindex === 1" class="animateScale">
-      <img src="@/assets/image/13_Universal.jpg" v-if="sliderBindex === 2" class="animateScale">
-      <img src="@/assets/image/14_Universal.jpg" v-if="sliderBindex === 3" class="animateScale">
-      <img src="@/assets/image/15_Universal.jpg" v-if="sliderBindex === 4" class="animateScale">
-      <img src="@/assets/image/16_Universal.jpg" v-if="sliderBindex === 5" class="animateScale">
+      <div class="plan-slider-img" v-if="sliderBindex === 1">
+        <img src="@/assets/image/12_Universal.jpg" class="animateScale">
+      </div>
+      <div class="plan-slider-img" v-if="sliderBindex === 2">
+        <img src="@/assets/image/13_Universal.jpg" class="animateScale">
+      </div>
+      <div class="plan-slider-img" v-if="sliderBindex === 3">
+        <img src="@/assets/image/14_Universal.jpg" class="animateScale">
+      </div>
+      <div class="plan-slider-img" v-if="sliderBindex === 4">
+        <img src="@/assets/image/15_Universal.jpg" class="animateScale">
+      </div>
+      <div class="plan-slider-img" v-if="sliderBindex === 5">
+        <img src="@/assets/image/16_Universal.jpg" class="animateScale">
+      </div>
     </div>
     <div class="plan-a-list">
       <div class="plan-a-list-left">
@@ -330,7 +348,9 @@ export default {
       email: "",
       coment: "",
       sliderAindex: 1,
-      sliderBindex: 1
+      sliderBindex: 1,
+      topSliderIndex: 1,
+      interval: null
     };
   },
   methods: {
@@ -370,7 +390,32 @@ export default {
       if (this.sliderBindex < 1) {
         this.sliderBindex = 5;
       }
+    },
+    increeseSliderTop() {
+      this.topSliderIndex++;
+      clearInterval(this.interval);
+      this.interval = setInterval(() => {
+        this.increeseSliderTop();
+      }, 5000);
+      if (this.topSliderIndex > 5) {
+        this.topSliderIndex = 1;
+      }
+    },
+    decreeceSliderTop() {
+      this.topSliderIndex--;
+
+      if (this.topSliderIndex < 1) {
+        this.topSliderIndex = 5;
+      }
+    },
+    setIntervalSlide() {
+      this.interval = setInterval(() => {
+        this.increeseSliderTop();
+      }, 5000);
     }
+  },
+  created() {
+    this.setIntervalSlide();
   }
 };
 </script>
@@ -564,7 +609,7 @@ export default {
 }
 
 .animateScale {
-  animation: scale 0.5s;
+  animation: scale 0.7s;
 }
 
 .plan-slider-img {
@@ -574,19 +619,50 @@ export default {
 
 @keyframes scale {
   0% {
-    opacity: 0;
+    opacity: 0.03;
+  }
+  5% {
+    opacity: 0.05;
+  }
+  12.5% {
+    opacity: 0.12;
+  }
+  17% {
+    opacity: 0.17;
   }
   25% {
     opacity: 0.25;
   }
+  30% {
+    opacity: 0.3;
+  }
+  40% {
+    opacity: 0.4;
+  }
   50% {
     opacity: 0.5;
+  }
+  62.5% {
+    opacity: 0.62;
+  }
+  67% {
+    opacity: 0.67;
   }
   75% {
     opacity: 0.75;
   }
+  87.5% {
+    opacity: 0.875;
+  }
+  90% {
+    opacity: 0.9;
+  }
   100% {
     opacity: 1;
   }
+}
+.top-slider-img {
+  width: 100%;
+  height: 100%;
 }
 </style>

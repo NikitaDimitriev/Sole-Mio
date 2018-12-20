@@ -8,26 +8,33 @@
             <div class="slide1-content-inner">
               <span class="slide1-title">Добро пожаловать на борт –</span>
               <span class="slide1-title">Sole Mio поднимает паруса</span>
-              <span
+              <!-- <span
                 class="slide1-subtitle"
               >Девелоперам на Пхукете приходится прикладывать немало усилий, чтобы выделить свои</span>
               <span
                 class="slide1-subtitle"
-              >проекты из общего ряда предложений на богатом рынке островной недвижимости.</span>
+              >проекты из общего ряда предложений на богатом рынке островной недвижимости.</span>-->
             </div>
           </div>
-          <img
-            src="@/assets/image/titel_img.png"
-            style="height: 100%; width: 100%"
-            class="background-slider"
-          >
+          <div class="top-slider-img" v-if="homeSliderIndex === 1">
+            <img
+              src="@/assets/image/titel_img.png"
+              style="height: 100%; width: 100%"
+              class="background-slider animateScale"
+            >
+          </div>
+          <div class="top-slider-img" v-if="homeSliderIndex === 2">
+            <img
+              src="@/assets/image/title-home.jpg"
+              style="height: 100%; width: 100%"
+              class="background-slider animateScale"
+            >
+          </div>
         </div>
-        <div class="slide">Slide 2</div>
-        <div class="slide">Slide 3</div>
       </div>
       <div class="indicators">
-        <span style="margin-right: 5px">&#10229;</span>
-        <span>&#10230;</span>
+        <span style="margin-right: 5px; cursor: pointer" @click="decreeceSliderTop()">&#10229;</span>
+        <span @click="increeseSliderTop()" style="cursor: pointer">&#10230;</span>
       </div>
     </div>
     <div id="concept">
@@ -232,7 +239,9 @@ export default {
     return {
       name: "",
       email: "",
-      coment: ""
+      coment: "",
+      homeSliderIndex: 1,
+      interval: null
     };
   },
   methods: {
@@ -248,7 +257,35 @@ export default {
         .then(response => {
           console.log(response);
         });
+    },
+    increeseSliderTop() {
+      this.homeSliderIndex++;
+      clearInterval(this.interval);
+      this.interval = setInterval(() => {
+        this.increeseSliderTop();
+      }, 5000);
+      if (this.homeSliderIndex > 2) {
+        this.homeSliderIndex = 1;
+      }
+    },
+    decreeceSliderTop() {
+      this.homeSliderIndex--;
+      clearInterval(this.interval);
+      this.interval = setInterval(() => {
+        this.increeseSliderTop();
+      }, 5000);
+      if (this.homeSliderIndex < 1) {
+        this.homeSliderIndex = 2;
+      }
+    },
+    setIntervalSlide() {
+      this.interval = setInterval(() => {
+        this.increeseSliderTop();
+      }, 5000);
     }
+  },
+  created() {
+    this.setIntervalSlide();
   }
 };
 </script>
@@ -475,8 +512,8 @@ export default {
   margin-bottom: 45px;
 }
 
-.group label{
-   font-family: 'Clear Sans Thin';
+.group label {
+  font-family: "Clear Sans Thin";
 }
 input {
   font-size: 18px;

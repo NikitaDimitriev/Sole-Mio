@@ -1,55 +1,56 @@
 <template>
-    <div id="footer">
-      <div class="footer-top">
-        <div class="footer-top-section1">
-          <div class="footer-logo">
-            <img src="@/assets/image/sole-mio-logo3.png">
-            <p style="color: #fff">
-              <i class="fa fa-phone"></i> +66 81 73 71 687
-            </p>
-            <p style="color: #fff">
-              <i class="fa fa-email"></i> sale@solemiophuket.com
-            </p>
-          </div>
+  <div id="footer">
+    <div class="footer-top">
+      <div class="footer-top-section1">
+        <div class="footer-logo">
+          <img src="@/assets/image/sole-mio-logo3.png">
         </div>
-        <div class="footer-top-section2">
-          <p class="footer-section-title">РАЗДЕЛЫ</p>
-          <p class="footer-section-text">> Главная</p>
-          <p class="footer-section-text">> Проект</p>
-          <p class="footer-section-text">> Контакты</p>
-        </div>
-        <div class="footer-top-section3">
-          <p class="footer-section-title">СОЦИАЛЬНЫЕ СЕТИ</p>
-          <p style="margin-bottom: 15px">
-            <a
-              href="https://facebook.com/solemiophuketcondominium"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="fa fa-facebook"></i> Facebook
-            </a>
-          </p>
-          <p>
-            <a
-              href="https://instagram.com/solemiophuketcondominium"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="fa fa-instagram"></i> Instagram
-            </a>
-          </p>
-        </div>
+        <p style="color: #aaaaaa; font-size:18px">
+          <i class="fa fa-phone" style="margin-top: 15px;"></i> +66 81 73 71 687 <br>
+          <i class="fa fa-phone" style="margin-top: 15px;"></i> +66 84 84 22 111 <br>
+        </p>
+        <p style="color: #aaaaaa; margin-top: 15px; margin-bottom: 15px;font-size:18px" >
+          <i class="fa fa-envelope" aria-hidden="true"></i> sale@solemiophuket.com
+        </p>
       </div>
-      <div class="footer-line"></div>
-      <div class="footer-bottom">
-        <span>© Sole Mio Condominium Bang Tao Beach Phuket, 2018. All rights reserved</span>
+      <div class="footer-top-section2">
+        <p class="footer-section-title">РАЗДЕЛЫ</p>
+        <p class="footer-section-text">> Главная</p>
+        <p class="footer-section-text">> Проект</p>
+        <p class="footer-section-text">> Контакты</p>
       </div>
-    </div>    
+      <div class="footer-top-section3">
+        <p class="footer-section-title">СОЦИАЛЬНЫЕ СЕТИ</p>
+        <p style="margin-bottom: 15px">
+          <a
+            href="https://facebook.com/solemiophuketcondominium"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa fa-facebook"></i> Facebook
+          </a>
+        </p>
+        <p>
+          <a
+            href="https://instagram.com/solemiophuketcondominium"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa fa-instagram"></i> Instagram
+          </a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-line"></div>
+    <div class="footer-bottom">
+      <span>© Sole Mio Condominium Bang Tao Beach Phuket, 2018. All rights reserved</span>
+    </div>
+  </div>
 </template>
 <script>
 export default {
-    name: "Footer"
-}
+  name: "Footer"
+};
 </script>
 <style>
 #footer {
@@ -57,7 +58,7 @@ export default {
   display: flex;
   flex-direction: column;
   padding: 40px 129px 45px 129px;
-  height: 400px;
+  /* height: 400px; */
 }
 .footer-line {
   border-bottom: 1px solid #e8e8e8;
