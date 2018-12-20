@@ -89,14 +89,14 @@
       <div class="advantages-card">
         <span class="advantages-card-title">
           Главные
-          приемущества
+          преимущества
           проекта
         </span>
         <div class="advantages-card-icon-section">
           <div class="advantages-icon-block">
             <!-- <i class="fas fa-beach">&#127796;</i> -->
             <img
-              src="@/assets/image/island-with-palm-trees.svg"
+              src="@/assets/image/Mesto.svg"
               style="margin: 10px; margin-bottom: -2px"
             >
             <span class="icon-description">
@@ -106,29 +106,44 @@
           </div>
           <div class="advantages-icon-block">
             <!-- <img src="@/assets/image/serviceIcon2.png" style="margin: 10px; margin-bottom: -2px"> -->
-            <i class="fa fa-line-chart" style="font-size: 45px"></i>
+            <img
+              src="@/assets/image/Rost.svg"
+              style="margin: 10px; margin-bottom: -2px"
+            >
             <span class="icon-description">Рост цен на квартиры на 30% к моменту запуска проекта</span>
           </div>
           <div class="advantages-icon-block">
-            <i class="fa fa-pie-chart" style="font-size: 45px"></i>
+            <img
+              src="@/assets/image/Etap.svg"
+              style="margin: 10px; margin-bottom: -2px"
+            >
             <span class="icon-description">Поэтапная рассрочка платежей и бесплатный пакет мебели</span>
           </div>
         </div>
         <div class="advantages-card-icon-section">
           <div class="advantages-icon-block">
             <!-- <img src="@/assets/image/serviceIcon4.png" style="margin: 10px; margin-bottom: -2px"> -->
-            <i class="fa fa-money" style="font-size: 45px"></i>
+            <img
+              src="@/assets/image/Nalog.svg"
+              style="margin: 10px; margin-bottom: -2px"
+            >
             <span class="icon-description">Отсутсвие налогов на недвижимое имущество</span>
           </div>
           <div class="advantages-icon-block">
             <!-- <img src="@/assets/image/serviceIcon5.png" style="margin: 10px; margin-bottom: -2px"> -->
-            <i class="fa fa-file-text-o" aria-hidden="true" style="font-size: 45px"></i>
+            <img
+              src="@/assets/image/Licenziya.svg"
+              style="margin: 10px; margin-bottom: -2px"
+            >
             <span
               class="icon-description"
             >Отельная лицензия и прозрачная программа арендного управления</span>
           </div>
           <div class="advantages-icon-block">
-            <i class="fa fa-share" aria-hidden="true" style="font-size: 45px"></i>
+            <img
+              src="@/assets/image/sevenPercent.svg"
+              style="margin: 10px; margin-bottom: -2px"
+            >
             <!-- <img src="@/assets/image/serviceIcon6.png" style="margin: 10px; margin-bottom: -2px"> -->
             <span
               class="icon-description"
@@ -140,25 +155,13 @@
     <div class="plan">
       <span class="plan-title">ПОЭТАЖНЫЙ ПЛАН И ТИП БЛОКОВ</span>
       <div class="plan-list-img">
-        <div class="plan-list-item">
-          <img src="@/assets/image/plan1.png">
-          <span>Блок 1</span>
+        <div class="plan-list-item" @click="showUnitImg('a')">
+          <img src="@/assets/image/plan1.png"  style="cursor: pointer">
+          <span>Unit A</span>
         </div>
-        <div class="plan-list-item">
-          <img src="@/assets/image/plan2.png">
-          <span>Блок 2</span>
-        </div>
-        <div class="plan-list-item">
-          <img src="@/assets/image/plan3.png">
-          <span>Блок 3</span>
-        </div>
-        <div class="plan-list-item">
-          <img src="@/assets/image/plan4.png">
-          <span>Блок 4</span>
-        </div>
-        <div class="plan-list-item">
-          <img src="@/assets/image/plan5.png">
-          <span>Блок 5</span>
+        <div class="plan-list-item" @click="showUnitImg('b')" >
+          <img src="@/assets/image/plan4.png" style="cursor: pointer">
+          <span>Unit B</span>
         </div>
       </div>
     </div>
@@ -166,7 +169,7 @@
       <div class="plan-slider">
         <div class="service-slide1">
           <div class="service-slide1-content">
-            <div class="slide1-card-plan-a">
+            <div class="slide1-card-plan-a" id="typeA">
               <div class="indicators-service">
                 <span
                   style="margin-right: 5px;cursor: pointer"
@@ -223,7 +226,7 @@
       <div class="plan-slider">
         <div class="service-slide1">
           <div class="service-slide1-content">
-            <div class="slide1-card-plan-a">
+            <div class="slide1-card-plan-a" id="typeB">
               <div class="indicators-service">
                 <span
                   style="margin-right: 5px; cursor: pointer"
@@ -329,6 +332,12 @@
       </div>
     </div>
     <Footer></Footer>
+    <div class="aWrap" v-if="aWrap" @click="closeWrap">
+      <img src="@/assets/image/Unit_type_A.png"  class="wrapImg">
+    </div>
+    <div class="bWrap" v-if="bWrap" @click="closeWrap">
+      <img src="@/assets/image/Unit_type_B.png"  class="wrapImg">
+    </div>
   </div>
 </template>
 <script>
@@ -350,7 +359,9 @@ export default {
       sliderAindex: 1,
       sliderBindex: 1,
       topSliderIndex: 1,
-      interval: null
+      interval: null,
+      aWrap: false,
+      bWrap: false
     };
   },
   methods: {
@@ -412,6 +423,17 @@ export default {
       this.interval = setInterval(() => {
         this.increeseSliderTop();
       }, 5000);
+    },
+    showUnitImg(type) {
+      if (type === "a") {
+        this.aWrap = true;
+      } else {
+        this.bWrap = true;
+      }
+    },
+    closeWrap() {
+      this.aWrap = false;
+      this.bWrap = false;
     }
   },
   created() {
@@ -475,7 +497,7 @@ export default {
 .advantages-card {
   display: flex;
   background-color: #fff;
-  width: 1240px;
+  width: 80%;
   height: 340px;
   margin-bottom: 150px;
   align-items: center;
@@ -664,5 +686,38 @@ export default {
 .top-slider-img {
   width: 100%;
   height: 100%;
+}
+.aWrap {
+ position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000000;
+  opacity: 0.9;
+  z-index: 10;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bWrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000000;
+  opacity: 0.9;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapImg{
+  z-index: 11;
+  opacity: 1;
 }
 </style>

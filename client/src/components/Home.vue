@@ -99,39 +99,14 @@
               </div>
               <div class="card__content">
                 <div class="card__body">
-                  <h3 class="card__title">Апартаменты с видом на море в Ката</h3>
+                  <h3 class="card__title">Unit type A: Deluxe</h3>
                   <ul class="card__l">
-                    <li>Жилая площадь: от 200 м2</li>
-                    <li>Спален: 2</li>
+                    <li>Жилая площадь: 57 m2</li>
                   </ul>
                 </div>
                 <div class="card__footer">
-                  <div class="price price__bl">$ 46 000</div>
-                  <button class="button">СМОТРЕТЬ</button>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="cards__item">
-            <div class="card">
-              <div class="card__top">
-                <div class="card__slider">
-                  <div class="card__slider-item">
-                    <img alt="аппартамены" src="@/assets/image/Photo_1.png">
-                  </div>
-                </div>
-              </div>
-              <div class="card__content">
-                <div class="card__body">
-                  <h3 class="card__title">Апартаменты с видом на море в Ката</h3>
-                  <ul class="card__l">
-                    <li>Жилая площадь: от 200 м2</li>
-                    <li>Спален: 2</li>
-                  </ul>
-                </div>
-                <div class="card__footer">
-                  <div class="price price__bl">$ 761 000</div>
-                  <button type="button" class="button">СМОТРЕТЬ</button>
+                  <div class="price price__bl">    </div>
+                  <button class="button" @click="scrollToA">СМОТРЕТЬ</button>
                 </div>
               </div>
             </div>
@@ -147,15 +122,14 @@
               </div>
               <div class="card__content">
                 <div class="card__body">
-                  <h3 class="card__title">Апартаменты с видом на море в Ката</h3>
+                  <h3 class="card__title">Unit type B: Universal</h3>
                   <ul class="card__l">
-                    <li>Жилая площадь: от 200 м2</li>
-                    <li>Спален: 2</li>
+                    <li>Жилая площадь: 36 m2</li>
                   </ul>
                 </div>
                 <div class="card__footer">
-                  <div class="price price__bl">$ 550 000</div>
-                  <button type="button" class="button">СМОТРЕТЬ</button>
+                  <div class="price price__bl">   </div>
+                  <button class="button" @click="scrollToB">СМОТРЕТЬ</button>
                 </div>
               </div>
             </div>
@@ -282,7 +256,13 @@ export default {
       this.interval = setInterval(() => {
         this.increeseSliderTop();
       }, 5000);
-    }
+    },
+    scrollToA() {
+      this.$router.push({path: '/project', hash:"#typeA"})
+    },
+    scrollToB() {
+      this.$router.push({path: '/project', hash:"#typeB"})
+    },
   },
   created() {
     this.setIntervalSlide();
