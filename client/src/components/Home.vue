@@ -6,8 +6,9 @@
         <div class="slide" data-state="active">
           <div class="slide1-content">
             <div class="slide1-content-inner">
-              <span class="slide1-title">Добро пожаловать на борт –</span>
-              <span class="slide1-title">Sole Mio поднимает паруса</span>
+              <span class="slide1-title" v-if="getLanguage === 'ru'">Добро пожаловать на борт –</span>
+              <span class="slide1-title" v-if="getLanguage === 'ru'">Sole Mio поднимает паруса</span>
+              <span class="slide1-title" v-if="getLanguage === 'en'">Welcome aboard</span>
               <!-- <span
                 class="slide1-subtitle"
               >Девелоперам на Пхукете приходится прикладывать немало усилий, чтобы выделить свои</span>
@@ -39,21 +40,34 @@
     </div>
     <div id="concept">
       <div class="concept-content">
-        <span class="concept-content-title">КОНЦЕПЦИЯ И ФИЛОСОФИЯ</span>
+        <span class="concept-content-title" v-if="getLanguage === 'ru'">КОНЦЕПЦИЯ И ФИЛОСОФИЯ</span>
+        <span class="concept-content-title" v-if="getLanguage === 'en'">Project description</span>
         <div class="concept-content-text-section">
           <span
-            class="concept-content-text"
+            class="concept-content-text" v-if="getLanguage === 'ru'"
           >Девелоперам на Пхукете приходится прикладывать немало усилий, чтобы выделить свои проекты из общего ряда предложений на богатом рынке островной недвижимости.</span>
           <span
-            class="concept-content-text"
+            class="concept-content-text" v-if="getLanguage === 'en'"
+          >Developers in Phuket go out of their way to set their projects apart on the island’s busy property market.</span>
+          <span
+            class="concept-content-text" v-if="getLanguage === 'ru'"
           >Кондоминиум Sole Mio – тот редкий случай, когда ничего делать не надо. Достаточно одного взгляда на это сочетание круизного лайнера и жилого комплекса, чтобы убедиться, насколько он уникален.</span>
           <span
-            class="concept-content-text"
+            class="concept-content-text" v-if="getLanguage === 'ru'"
           >Новый кондоминиум Sole Mio у пляжа Банг-Тао может похвастаться немалым набором козырей. Начать стоит с расположения – всего 150 м по прямой линии от пляжа и 300 м неспешным шагом по удобному маршруту.</span>
           <span
-            class="concept-content-text"
+            class="concept-content-text" v-if="getLanguage === 'ru'"
           >Пляж сам по себе тоже примечателен, поскольку речь идет о том участке Банг-Тао (второго по протяженности пляжа Пхукета), где до сих пор жива аутентичная пхукетская атмосфера. Вдоль побережья выстроились небольшие местные ресторанчики и регги-бары, где приятно будет встретить закат за едой и напитками на ласкающем ноги теплом песке. Если же хочется чего-то уровнем повыше, то достаточно небольшой прогулки к югу, где расположился Catch, один из лучших пляжных клубов острова. А на небольшом расстоянии к северу находится широкий ассортимент люксовых отелей Лагуны, славящейся своими изысканным ресторанами, СПА-центрами и полями для гольфа.</span>
         </div>
+        <span
+            class="concept-content-text" v-if="getLanguage === 'en'"
+          >Sole Mio doesn’t have to. One look at it proves that it’s special.</span>
+          <span
+            class="concept-content-text" v-if="getLanguage === 'en'" style="width:50%"
+          >This new condominium project coming up in Bang Tao has a lot going on for it. Let’s start with the location – just 150m from the beach in a straight line, and a short 300m walk to get there.</span>
+          <span
+            class="concept-content-text" v-if="getLanguage === 'en'" style="width:50%"
+          >And the beach itself is quite special too – it’s the section of Bang Tao, Phuket’s second longest stretch of sand, that still preserves an authentic island feel. Lined with small local restaurants and reggae bars, it al-lows you to enjoy a sunset meal or drink while experiencing the feel of warm sand under your feet. Looking for something a little less rustic? A short walk south and you end up at one of Phuket’s best beach clubs, Catch; a short stroll to the north - the luxurious resorts of Laguna Phuket with their fine dining restaurants, spas and a golf course await.</span>
         <!-- <div class="button">
           <p class="text-button">ЧИТАТЬ БОЛЬШЕ</p>
         </div>-->
@@ -61,19 +75,28 @@
     </div>
     <div id="complex">
       <div class="complex-card">
-        <span class="complex-card-title">
+        <span class="complex-card-title" v-if="getLanguage === 'ru'">
           Современный
           компелекс на
         </span>
-        <span class="complex-card-title" style="font-family: 'Anglecia Pro Display Bold'">
+        <span class="complex-card-title" style="font-family: 'Anglecia Pro Display Bold'" v-if="getLanguage === 'ru'"> 
           лазурном берегу
           Пхукета
         </span>
+        <span class="complex-card-title" v-if="getLanguage === 'en'">
+          Modern project on
+        </span>
+        <span class="complex-card-title" style="font-family: 'Anglecia Pro Display Bold'" v-if="getLanguage === 'en'">
+          asure beach of Phuket
+        </span>
         <div class="complex-content-text-section">
-          <span class="concept-content-text">
+          <span class="concept-content-text" v-if="getLanguage === 'ru'">
             Sole Mio Condominium является совместным проектом надежной команды известных экспертов по
             недвижимости на острове Пхукет – девелоперской компании Phuket Asialand и агентства
             недвижимости Railand Property International.
+          </span>
+          <span class="concept-content-text" v-if="getLanguage === 'en'">
+            Sole Mio Condominium is the brainchild of a trusted team of well-known Phuket property experts — Phuket Asialand as a developer company on the one part and Railand Pro­ perty International as a real esate agency on the other part.
           </span>
           <!-- <div class="button" style="border: none; margin-top: 30px">
             <p class="text-button">ЧИТАТЬ БОЛЬШЕ</p>
@@ -85,7 +108,8 @@
       </div>
     </div>
     <div id="apartments">
-      <span class="apartments-title">АППАРТАМЕНТЫ</span>
+      <span class="apartments-title" v-if="getLanguage === 'ru'">АППАРТАМЕНТЫ</span>
+      <span class="apartments-title" v-if="getLanguage === 'en'">APARTMENTS</span>
       <div class="cards-section">
         <ul class="cards__list cards__list-tab js-content is-active" data-tab="0">
           <li class="cards__item">
@@ -101,12 +125,14 @@
                 <div class="card__body">
                   <h3 class="card__title">Unit type A: Deluxe</h3>
                   <ul class="card__l">
-                    <li>Жилая площадь: 57 m2</li>
+                    <li v-if="getLanguage === 'ru'">Жилая площадь: 57 m2</li>
+                    <li v-if="getLanguage === 'en'">TOTAL AREA: 57 m2</li>
                   </ul>
                 </div>
                 <div class="card__footer">
                   <div class="price price__bl">    </div>
-                  <button class="button" @click="scrollToA">СМОТРЕТЬ</button>
+                  <button class="button" @click="scrollToA" v-if="getLanguage === 'ru'">СМОТРЕТЬ</button>
+                  <button class="button" @click="scrollToA" v-if="getLanguage === 'en'">ABOUT</button>
                 </div>
               </div>
             </div>
@@ -124,12 +150,14 @@
                 <div class="card__body">
                   <h3 class="card__title">Unit type B: Universal</h3>
                   <ul class="card__l">
-                    <li>Жилая площадь: 36 m2</li>
+                    <li v-if="getLanguage === 'ru'">Жилая площадь: 36 m2</li>
+                    <li v-if="getLanguage === 'en'">TOTAL AREA: 36 m2</li>
                   </ul>
                 </div>
                 <div class="card__footer">
                   <div class="price price__bl">   </div>
-                  <button class="button" @click="scrollToB">СМОТРЕТЬ</button>
+                  <button class="button" @click="scrollToB" v-if="getLanguage === 'ru'">СМОТРЕТЬ</button>
+                  <button class="button" @click="scrollToB" v-if="getLanguage === 'en'">ABOUT</button>
                 </div>
               </div>
             </div>
@@ -138,7 +166,8 @@
       </div>
     </div>
     <div id="projects">
-      <span class="projects-title">РЕАЛИЗОВАНЫЕ ПРОЕКТЫ</span>
+      <span class="projects-title" v-if="getLanguage === 'ru'">РЕАЛИЗОВАНЫЕ ПРОЕКТЫ</span>
+      <span class="projects-title" v-if="getLanguage === 'en'">DEVELOPER PORTFOLIO</span>
       <div class="projects-img" style="margin-top: 30px">
         <img src="@/assets/image/Surin.png" alt>
         <img src="@/assets/image/NewBandW.jpeg" alt>
@@ -163,13 +192,20 @@
         <span
           class="contacts-side-title"
           style="text-align: center; margin-top: 30px; font-size:24px"
+          v-if="getLanguage === 'ru'"
         >Связаться с нами</span>
+        <span
+          class="contacts-side-title"
+          style="text-align: center; margin-top: 30px; font-size:24px"
+          v-if="getLanguage === 'en'"
+        >Contact us</span>
         <div class="contacts-input">
           <div class="group">
             <input type="text" required v-model="name">
             <span class="highlight"></span>
             <span class="bar"></span>
-            <label style="font-family: 'Clear Sans Thin'">Имя</label>
+            <label style="font-family: 'Clear Sans Thin'" v-if="getLanguage === 'ru'">Имя</label>
+            <label style="font-family: 'Clear Sans Thin'" v-if="getLanguage === 'en'">Name</label>
           </div>
 
           <div class="group">
@@ -183,12 +219,14 @@
             <input type="text" required v-model="coment">
             <span class="highlight"></span>
             <span class="bar"></span>
-            <label>Коментарий</label>
+            <label v-if="getLanguage === 'ru'">Коментарий</label>
+            <label v-if="getLanguage === 'en'">Comment</label>
           </div>
         </div>
         <div class="contacts-footer">
           <div class="button" @click="send()">
-            <p class="text-button">ОТПРАВИТЬ</p>
+            <p class="text-button" v-if="getLanguage === 'ru'">ОТПРАВИТЬ</p>
+            <p class="text-button" v-if="getLanguage === 'en'">SEND</p>
           </div>
         </div>
       </div>
@@ -214,7 +252,11 @@ export default {
       name: "",
       email: "",
       coment: "",
-      homeSliderIndex: 1
+      homeSliderIndex: 1,
+      language: localStorage.getItem('language')
+      // get language(){
+      //   return localStorage.getItem('language');
+      // }
     };
   },
   methods: {
@@ -250,7 +292,12 @@ export default {
     scrollToB() {
       this.$router.push({path: '/project', hash:"#typeB"})
     },
-  }
+  },
+  computed: {
+    getLanguage(){
+      return localStorage.getItem('language');
+    }
+  },
 };
 </script>
 <style lang="css">

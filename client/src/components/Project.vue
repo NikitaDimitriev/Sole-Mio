@@ -6,8 +6,9 @@
         <div class="slide" data-state="active">
           <div class="slide1-content">
             <div class="slide1-content-inner">
-              <span class="slide1-title">Добро пожаловать на борт –</span>
-              <span class="slide1-title">Sole Mio поднимает паруса</span>
+              <span class="slide1-title" v-if="getLanguage === 'ru'">Добро пожаловать на борт –</span>
+              <span class="slide1-title" v-if="getLanguage === 'ru'">Sole Mio поднимает паруса</span>
+              <span class="slide1-title" v-if="getLanguage === 'en'">Welcome aboard</span>
               <!-- <span
                 class="slide1-subtitle"
               >Девелоперам на Пхукете приходится прикладывать немало усилий, чтобы выделить свои</span>
@@ -60,94 +61,130 @@
     </div>
     <div class="description-project">
       <div class="description-project-left">
-        <span class="description-project-title">Описание проекта</span>
+        <span class="description-project-title" v-if="getLanguage === 'ru'">Описание проекта</span>
+        <span class="description-project-title" v-if="getLanguage === 'en'">Project description</span>
         <span
           class="description-project-text"
+          v-if="getLanguage === 'ru'"
         >Девелоперам на Пхукете приходится прикладывать немало усилий, чтобы выделить свои проекты из общего ряда предложений на богатом рынке островной недвижимости.</span>
         <span
           class="description-project-text"
+          v-if="getLanguage === 'ru'"
         >Кондоминиум Sole Mio – тот редкий случай, когда ничего делать не надо. Достаточно одного взгляда на это сочетание круизного лайнера и жилого комплекса, чтобы убедиться, насколько он уникален.</span>
         <span
           class="description-project-text"
+          v-if="getLanguage === 'ru'"
         >Новый кондоминиум Sole Mio у пляжа Банг-Тао может похвастаться немалым набором козырей. Начать стоит с расположения – всего 150 м по прямой линии от пляжа и 300 м неспешным шагом по удобному маршруту.</span>
+        <span
+          class="description-project-text"
+          v-if="getLanguage === 'en'"
+        >Developers in Phuket go out of their way to set their projects apart on the island’s busy property market.</span>
+        <span
+          class="description-project-text"
+          v-if="getLanguage === 'en'"
+        >Sole Mio doesn’t have to. One look at it proves that it’s special.This new condominium project coming up in Bang Tao has a lot going on for it. Let’s start with the location – just 150m from the beach in a straight line, and a short 300m walk to get there.</span>
       </div>
       <div class="description-project-card">
         <ul>
-          <li>Парковка</li>
-          <li>Лобби/Ресепшен</li>
-          <li>Рекреационный Центр</li>
-          <li>Фитнес Зал</li>
-          <li>
+          <li v-if="getLanguage === 'ru'">Парковка</li>
+          <li v-if="getLanguage === 'en'">Parking</li>
+          <li v-if="getLanguage === 'ru'">Лобби/Ресепшен</li>
+          <li v-if="getLanguage === 'en'">Lobby/Reception</li>
+          <li v-if="getLanguage === 'ru'">Рекреационный Центр</li>
+          <li v-if="getLanguage === 'en'">health and rejuvenation centre</li>
+          <li v-if="getLanguage === 'ru'">Фитнес Зал</li>
+          <li v-if="getLanguage === 'en'">Gym, Meditation and Yoga Centers</li>
+          <li v-if="getLanguage === 'ru'">
             Плавательный бассейн и терраса для
             принятия солнечных ванн на крыше
           </li>
-          <li>Ресторан и Бар</li>
+          <li v-if="getLanguage === 'en'">Rooftop swimming pool and sea view sunbathing terrace</li>
+          <li v-if="getLanguage === 'ru'">Ресторан и Бар</li>
+          <li v-if="getLanguage === 'en'">Bar and Restaurant</li>
         </ul>
       </div>
     </div>
     <div class="advantages">
       <div class="advantages-card">
-        <span class="advantages-card-title">
+        <span class="advantages-card-title" v-if="getLanguage === 'ru'">
           Главные
           преимущества
           проекта
         </span>
+        <span class="advantages-card-title" v-if="getLanguage === 'en'">Project key features</span>
         <div class="advantages-card-icon-section">
           <div class="advantages-icon-block">
             <!-- <i class="fas fa-beach">&#127796;</i> -->
-            <img
-              src="@/assets/image/Mesto.svg"
-              style="margin: 10px; margin-bottom: -2px"
-            >
-            <span class="icon-description">
+            <img src="@/assets/image/Mesto.svg" style="margin: 10px; margin-bottom: -2px">
+            <span class="icon-description" v-if="getLanguage === 'ru'">
               Месторасположение в одной из самых престижных и развитых курортных
               территорий острова Пхукет менее чем в 200 метрах от пляжа Банг Тао
             </span>
+            <span
+              class="icon-description"
+              v-if="getLanguage === 'en'"
+            >Location in one of the most prestigious and developed resort areas of Phuket Island in less than 200 meters walking distance to Bang Tao beach</span>
           </div>
           <div class="advantages-icon-block">
             <!-- <img src="@/assets/image/serviceIcon2.png" style="margin: 10px; margin-bottom: -2px"> -->
-            <img
-              src="@/assets/image/Rost.svg"
-              style="margin: 10px; margin-bottom: -2px"
-            >
-            <span class="icon-description">Рост цен на квартиры на 30% к моменту запуска проекта</span>
+            <img src="@/assets/image/Rost.svg" style="margin: 10px; margin-bottom: -2px">
+            <span
+              class="icon-description"
+              v-if="getLanguage === 'ru'"
+            >Рост цен на квартиры на 30% к моменту запуска проекта</span>
+            <span
+              class="icon-description"
+              v-if="getLanguage === 'en'"
+            >30% unit price growth by the end of construction</span>
           </div>
           <div class="advantages-icon-block">
-            <img
-              src="@/assets/image/Etap.svg"
-              style="margin: 10px; margin-bottom: -2px"
-            >
-            <span class="icon-description">Поэтапная рассрочка платежей и бесплатный пакет мебели</span>
+            <img src="@/assets/image/Etap.svg" style="margin: 10px; margin-bottom: -2px">
+            <span
+              class="icon-description"
+              v-if="getLanguage === 'ru'"
+            >Поэтапная рассрочка платежей и бесплатный пакет мебели</span>
+            <span
+              class="icon-description"
+              v-if="getLanguage === 'en'"
+            >Payment by installments and free furniture package</span>
           </div>
         </div>
         <div class="advantages-card-icon-section">
           <div class="advantages-icon-block">
             <!-- <img src="@/assets/image/serviceIcon4.png" style="margin: 10px; margin-bottom: -2px"> -->
-            <img
-              src="@/assets/image/Nalog.svg"
-              style="margin: 10px; margin-bottom: -2px"
-            >
-            <span class="icon-description">Отсутсвие налогов на недвижимое имущество</span>
+            <img src="@/assets/image/Nalog.svg" style="margin: 10px; margin-bottom: -2px">
+            <span
+              class="icon-description"
+              v-if="getLanguage === 'ru'"
+            >Отсутсвие налогов на недвижимое имущество</span>
+            <span
+              class="icon-description"
+              v-if="getLanguage === 'en'"
+            >Free two weeks stay in hotel per year</span>
           </div>
           <div class="advantages-icon-block">
             <!-- <img src="@/assets/image/serviceIcon5.png" style="margin: 10px; margin-bottom: -2px"> -->
-            <img
-              src="@/assets/image/Licenziya.svg"
-              style="margin: 10px; margin-bottom: -2px"
-            >
+            <img src="@/assets/image/Licenziya.svg" style="margin: 10px; margin-bottom: -2px">
             <span
               class="icon-description"
+              v-if="getLanguage === 'ru'"
             >Отельная лицензия и прозрачная программа арендного управления</span>
+            <span
+              class="icon-description"
+              v-if="getLanguage === 'en'"
+            >Hotel license and transparent rental management program</span>
           </div>
           <div class="advantages-icon-block">
-            <img
-              src="@/assets/image/sevenPercent.svg"
-              style="margin: 10px; margin-bottom: -2px"
-            >
+            <img src="@/assets/image/sevenPercent.svg" style="margin: 10px; margin-bottom: -2px">
             <!-- <img src="@/assets/image/serviceIcon6.png" style="margin: 10px; margin-bottom: -2px"> -->
             <span
               class="icon-description"
+              v-if="getLanguage === 'ru'"
             >От 7% ежегодного гарантированного возврата инвестиций в течение 5 лет</span>
+            <span
+              class="icon-description"
+              v-if="getLanguage === 'en'"
+            >Guaranteed return on investment from 7% per year for 5 years</span>
           </div>
         </div>
       </div>
@@ -156,10 +193,10 @@
       <span class="plan-title">ПОЭТАЖНЫЙ ПЛАН И ТИП БЛОКОВ</span>
       <div class="plan-list-img">
         <div class="plan-list-item" @click="showUnitImg('a')">
-          <img src="@/assets/image/plan1.png"  style="cursor: pointer">
+          <img src="@/assets/image/plan1.png" style="cursor: pointer">
           <span>Unit A</span>
         </div>
-        <div class="plan-list-item" @click="showUnitImg('b')" >
+        <div class="plan-list-item" @click="showUnitImg('b')">
           <img src="@/assets/image/plan4.png" style="cursor: pointer">
           <span>Unit B</span>
         </div>
@@ -298,32 +335,41 @@
         <span
           class="contacts-side-title"
           style="text-align: center; margin-top: 30px; font-size:24px"
+          v-if="getLanguage === 'ru'"
         >Связаться с нами</span>
+        <span
+          class="contacts-side-title"
+          style="text-align: center; margin-top: 30px; font-size:24px"
+          v-if="getLanguage === 'en'"
+        >Contact us</span>
         <div class="contacts-input">
           <div class="group">
             <input type="text" required v-model="name">
             <span class="highlight"></span>
             <span class="bar"></span>
-            <label>Имя</label>
+            <label style="font-family: 'Clear Sans Thin'" v-if="getLanguage === 'ru'">Имя</label>
+            <label style="font-family: 'Clear Sans Thin'" v-if="getLanguage === 'en'">Name</label>
           </div>
 
           <div class="group">
             <input type="text" required v-model="email">
             <span class="highlight"></span>
             <span class="bar"></span>
-            <label>Email</label>
+            <label style="font-family: 'Clear Sans Thin'">Email</label>
           </div>
 
           <div class="group">
             <input type="text" required v-model="coment">
             <span class="highlight"></span>
             <span class="bar"></span>
-            <label>Коментарий</label>
+            <label v-if="getLanguage === 'ru'">Коментарий</label>
+            <label v-if="getLanguage === 'en'">Comment</label>
           </div>
         </div>
         <div class="contacts-footer">
           <div class="button" @click="send()">
-            <p class="text-button">ОТПРАВИТЬ</p>
+            <p class="text-button" v-if="getLanguage === 'ru'">ОТПРАВИТЬ</p>
+            <p class="text-button" v-if="getLanguage === 'en'">SEND</p>
           </div>
         </div>
       </div>
@@ -333,10 +379,10 @@
     </div>
     <Footer></Footer>
     <div class="aWrap" v-if="aWrap" @click="closeWrap">
-      <img src="@/assets/image/Unit_type_A.png"  class="wrapImg">
+      <img src="@/assets/image/Unit_type_A.png" class="wrapImg">
     </div>
     <div class="bWrap" v-if="bWrap" @click="closeWrap">
-      <img src="@/assets/image/Unit_type_B.png"  class="wrapImg">
+      <img src="@/assets/image/Unit_type_B.png" class="wrapImg">
     </div>
   </div>
 </template>
@@ -427,6 +473,11 @@ export default {
       this.bWrap = false;
     }
   },
+  computed: {
+    getLanguage() {
+      return localStorage.getItem("language");
+    }
+  }
 };
 </script>
 <style>
@@ -676,7 +727,7 @@ export default {
   height: 100%;
 }
 .aWrap {
- position: fixed;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -704,7 +755,7 @@ export default {
   justify-content: center;
   align-items: center;
 }
-.wrapImg{
+.wrapImg {
   z-index: 11;
   opacity: 1;
 }

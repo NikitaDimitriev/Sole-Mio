@@ -4,8 +4,10 @@
     <div class="contact-container">
       <img src="@/assets/image/contact-bg.png" class="contact-page-img">
       <div class="contact-container-text">
-        <span class="contact-container-title">Контакты</span>
-        <span class="contact-container-subtitle">Ответим на все ваши вопросы</span>
+        <span class="contact-container-title" v-if="getLanguage === 'ru'">Контакты</span>
+        <span class="contact-container-subtitle" v-if="getLanguage === 'ru'">Ответим на все ваши вопросы</span>
+        <span class="contact-container-title" v-if="getLanguage === 'en'">Contacts</span>
+        <span class="contact-container-subtitle" v-if="getLanguage === 'en'">We will answer all your questions</span>
       </div>
     </div>
     <div id="contacts" style="margin-top: -300px">
@@ -26,32 +28,41 @@
         <span
           class="contacts-side-title"
           style="text-align: center; margin-top: 30px; font-size:24px"
+          v-if="getLanguage === 'ru'"
         >Связаться с нами</span>
+        <span
+          class="contacts-side-title"
+          style="text-align: center; margin-top: 30px; font-size:24px"
+          v-if="getLanguage === 'en'"
+        >Contact us</span>
         <div class="contacts-input">
           <div class="group">
             <input type="text" required v-model="name">
             <span class="highlight"></span>
             <span class="bar"></span>
-            <label>Имя</label>
+            <label style="font-family: 'Clear Sans Thin'" v-if="getLanguage === 'ru'">Имя</label>
+            <label style="font-family: 'Clear Sans Thin'" v-if="getLanguage === 'en'">Name</label>
           </div>
 
           <div class="group">
             <input type="text" required v-model="email">
             <span class="highlight"></span>
             <span class="bar"></span>
-            <label>Email</label>
+            <label style="font-family: 'Clear Sans Thin'">Email</label>
           </div>
 
           <div class="group">
             <input type="text" required v-model="coment">
             <span class="highlight"></span>
             <span class="bar"></span>
-            <label>Коментарий</label>
+            <label v-if="getLanguage === 'ru'">Коментарий</label>
+            <label v-if="getLanguage === 'en'">Comment</label>
           </div>
         </div>
         <div class="contacts-footer">
           <div class="button" @click="send()">
-            <p class="text-button">ОТПРАВИТЬ</p>
+            <p class="text-button" v-if="getLanguage === 'ru'">ОТПРАВИТЬ</p>
+            <p class="text-button" v-if="getLanguage === 'en'">SEND</p>
           </div>
         </div>
       </div>
@@ -100,7 +111,12 @@ export default {
     closeNav() {
       document.getElementById("mySidenav").style.width = "0";
     }
-  }
+  },
+  computed: {
+    getLanguage(){
+      return localStorage.getItem('language');
+    }
+  },
 };
 </script>
 <style>
