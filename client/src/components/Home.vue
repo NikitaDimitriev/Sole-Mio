@@ -268,7 +268,7 @@ export default {
       };
       console.log(data);
       this.$axios
-        .post("https://solemiaphuket.herokuapp.com/api/send-mail", data)
+        .post("https://solemiophuket.herokuapp.com/api/send-mail", data)
         .then(response => {
           console.log(response);
         });
