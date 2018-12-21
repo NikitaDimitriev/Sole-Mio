@@ -6,6 +6,9 @@
           <i class="fa fa-bars burger" @click="openNav()"></i>
           <span class="menu-title" @click="openNav()">MENU</span>
         </div>
+        <div>
+          <span>  </span>
+        </div>
         <div class="top-menu-logo">
           <router-link to="/">
             <img src="@/assets/image/logo-white.png" v-if="!scrolled">
@@ -28,11 +31,11 @@
             <i class="fa fa-instagram"></i>
           </a>
         </div>
-        <div class="language-choose">
-          <span @click="changeToRu()">RU</span>
-          |
-          <span @click="changeToEn()">EN</span>
-        </div>
+          <div class="language-choose">
+            <span @click="changeToRu()">RU</span>
+            |
+            <span @click="changeToEn()">EN</span>
+          </div>
       </div>
     </div>
     <div id="mySidenav" class="sidenav">
@@ -44,7 +47,7 @@
       <router-link to="/project" v-if="getLanguage === 'ru'">Проект</router-link>
       <router-link to="/contact" v-if="getLanguage === 'ru'">Контакты</router-link>
       <router-link to="/" v-if="getLanguage === 'en'">Main Page</router-link>
-      <router-link to="/project" v-if="getLanguage === 'en'">Proje</router-link>
+      <router-link to="/project" v-if="getLanguage === 'en'">Project</router-link>
       <router-link to="/contact" v-if="getLanguage === 'en'">Contacts</router-link>
       <!-- <router-link to="/service">Сервис</router-link> -->
       <!-- <router-link to="/news">Новости</router-link> -->
@@ -75,14 +78,14 @@ export default {
     handleScroll() {
       this.scrolled = window.scrollY > 0;
     },
-    changeToRu(){
-      localStorage.removeItem('language');
-      localStorage.setItem('language', 'ru');
+    changeToRu() {
+      localStorage.removeItem("language");
+      localStorage.setItem("language", "ru");
       window.location.reload();
     },
-    changeToEn(){
-      localStorage.removeItem('language');
-      localStorage.setItem('language', 'en');
+    changeToEn() {
+      localStorage.removeItem("language");
+      localStorage.setItem("language", "en");
       window.location.reload();
     }
   },
@@ -93,10 +96,10 @@ export default {
     window.removeEventListener("scroll", this.handleScroll);
   },
   computed: {
-    getLanguage(){
-      return localStorage.getItem('language');
+    getLanguage() {
+      return localStorage.getItem("language");
     }
-  },
+  }
 };
 </script>
 
@@ -220,7 +223,7 @@ export default {
   margin-top: 70px;
   cursor: pointer;
 }
-.scrolled .language-choose{
+.scrolled .language-choose {
   color: #cacaca;
 }
 </style>
