@@ -380,10 +380,10 @@
     </div>
     <Footer></Footer>
     <div class="aWrap" v-if="aWrap" @click="closeWrap">
-      <img src="@/assets/image/Unit_type_B.png" class="wrapImg">
+      <img src="@/assets/image/Unit_type_A.png" class="wrapImg">
     </div>
     <div class="bWrap" v-if="bWrap" @click="closeWrap">
-      <img src="@/assets/image/Unit_type_A.png" class="wrapImg">
+      <img src="@/assets/image/Unit_type_B.png" class="wrapImg">
     </div>
   </div>
 </template>
