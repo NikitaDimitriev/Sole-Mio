@@ -258,7 +258,7 @@
           <!-- <button class="button">Смотреть Больше</button> -->
         </div>
       </div>
-      <img src="@/assets/image/Unit_type_B.png" style="float: right;height: 555px">
+      <img src="@/assets/image/Unit_type_A.png" style="float: right;height: 555px">
     </div>
     <div class="plan-a">
       <div class="plan-slider">
@@ -316,7 +316,7 @@
           <span>8. Balcony</span>
         </div>
       </div>
-      <img src="@/assets/image/Unit_type_A.png" style="float: right;height: 555px">
+      <img src="@/assets/image/Unit_type_B.png" style="float: right;height: 555px">
     </div>
     <div id="contacts">
       <div class="contacts-side">
