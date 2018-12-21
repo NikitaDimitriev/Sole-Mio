@@ -190,7 +190,8 @@
       </div>
     </div>
     <div class="plan">
-      <span class="plan-title">ПОЭТАЖНЫЙ ПЛАН И ТИП БЛОКОВ</span>
+      <span class="plan-title" v-if="getLanguage === 'ru'">ПОЭТАЖНЫЙ ПЛАН И ТИП БЛОКОВ</span>
+      <span class="plan-title" v-if="getLanguage === 'en'">Plan of appartmens</span>
       <div class="plan-list-img">
         <div class="plan-list-item" @click="showUnitImg('a')">
           <img src="@/assets/image/plan1.png" style="cursor: pointer">
@@ -257,7 +258,7 @@
           <!-- <button class="button">Смотреть Больше</button> -->
         </div>
       </div>
-      <img src="@/assets/image/Unit_type_A.png" style="float: right;height: 555px">
+      <img src="@/assets/image/Unit_type_B.png" style="float: right;height: 555px">
     </div>
     <div class="plan-a">
       <div class="plan-slider">
@@ -315,7 +316,7 @@
           <span>8. Balcony</span>
         </div>
       </div>
-      <img src="@/assets/image/Unit_type_B.png" style="float: right;height: 555px">
+      <img src="@/assets/image/Unit_type_A.png" style="float: right;height: 555px">
     </div>
     <div id="contacts">
       <div class="contacts-side">
@@ -379,10 +380,10 @@
     </div>
     <Footer></Footer>
     <div class="aWrap" v-if="aWrap" @click="closeWrap">
-      <img src="@/assets/image/Unit_type_A.png" class="wrapImg">
+      <img src="@/assets/image/Unit_type_B.png" class="wrapImg">
     </div>
     <div class="bWrap" v-if="bWrap" @click="closeWrap">
-      <img src="@/assets/image/Unit_type_B.png" class="wrapImg">
+      <img src="@/assets/image/Unit_type_A.png" class="wrapImg">
     </div>
   </div>
 </template>
