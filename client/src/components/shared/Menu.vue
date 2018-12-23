@@ -6,6 +6,9 @@
           <i class="fa fa-bars burger" @click="openNav()"></i>
           <span class="menu-title" @click="openNav()">MENU</span>
         </div>
+        <div>
+          <span>  </span>
+        </div>
         <div class="top-menu-logo">
           <router-link to="/">
             <img src="@/assets/image/logo-white.png" v-if="!scrolled">
@@ -28,6 +31,11 @@
             <i class="fa fa-instagram"></i>
           </a>
         </div>
+          <div class="language-choose">
+            <span @click="changeToRu()">RU</span>
+            |
+            <span @click="changeToEn()">EN</span>
+          </div>
       </div>
     </div>
     <div id="mySidenav" class="sidenav">
@@ -35,9 +43,12 @@
         &times;
         <span style="font-size: 12px">MENU</span>
       </span>
-      <router-link to="/">Главная</router-link>
-      <router-link to="/project">Проект</router-link>
-      <router-link to="/contact">Контакты</router-link>
+      <router-link to="/" v-if="getLanguage === 'ru'">Главная</router-link>
+      <router-link to="/project" v-if="getLanguage === 'ru'">Проект</router-link>
+      <router-link to="/contact" v-if="getLanguage === 'ru'">Контакты</router-link>
+      <router-link to="/" v-if="getLanguage === 'en'">Main Page</router-link>
+      <router-link to="/project" v-if="getLanguage === 'en'">Project</router-link>
+      <router-link to="/contact" v-if="getLanguage === 'en'">Contacts</router-link>
       <!-- <router-link to="/service">Сервис</router-link> -->
       <!-- <router-link to="/news">Новости</router-link> -->
     </div>
@@ -66,6 +77,16 @@ export default {
     },
     handleScroll() {
       this.scrolled = window.scrollY > 0;
+    },
+    changeToRu() {
+      localStorage.removeItem("language");
+      localStorage.setItem("language", "ru");
+      window.location.reload();
+    },
+    changeToEn() {
+      localStorage.removeItem("language");
+      localStorage.setItem("language", "en");
+      window.location.reload();
     }
   },
   created() {
@@ -73,6 +94,11 @@ export default {
   },
   destroyed() {
     window.removeEventListener("scroll", this.handleScroll);
+  },
+  computed: {
+    getLanguage() {
+      return localStorage.getItem("language");
+    }
   }
 };
 </script>
@@ -85,7 +111,7 @@ export default {
   z-index: 5;
   width: 100%;
 }
-.scrolled{
+.scrolled {
   background-color: #fff;
   color: #000;
   transition: 0.5s;
@@ -180,13 +206,24 @@ export default {
 .burger:hover {
   color: #fcd000;
 }
-.scrolled .burger{
+.scrolled .burger {
   color: #000;
 }
-.scrolled .menu-title{
+.scrolled .menu-title {
   color: #000;
 }
-.scrolled i{
+.scrolled i {
   color: #000;
+}
+.language-choose {
+  font-size: 12px;
+  letter-spacing: 0px;
+  color: #fff;
+  font-family: "Clear Sans Thin";
+  margin-top: 70px;
+  cursor: pointer;
+}
+.scrolled .language-choose {
+  color: #cacaca;
 }
 </style>

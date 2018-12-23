@@ -14,13 +14,18 @@
         </p>
       </div>
       <div class="footer-top-section2">
-        <p class="footer-section-title">РАЗДЕЛЫ</p>
-        <p class="footer-section-text">> Главная</p>
-        <p class="footer-section-text">> Проект</p>
-        <p class="footer-section-text">> Контакты</p>
+        <p class="footer-section-title" v-if="getLanguage === 'ru'">РАЗДЕЛЫ</p>
+         <p class="footer-section-title" v-if="getLanguage === 'en'">CATEGORIES</p>
+        <p class="footer-section-text" v-if="getLanguage === 'ru'">> Главная</p>
+        <p class="footer-section-text" v-if="getLanguage === 'ru'">> Проект</p>
+        <p class="footer-section-text" v-if="getLanguage === 'ru'">> Контакты</p>
+        <p class="footer-section-text" v-if="getLanguage === 'en'">> Main page</p>
+        <p class="footer-section-text" v-if="getLanguage === 'en'">> About project</p>
+        <p class="footer-section-text" v-if="getLanguage === 'en'">> Contacts</p>
       </div>
       <div class="footer-top-section3">
-        <p class="footer-section-title">СОЦИАЛЬНЫЕ СЕТИ</p>
+        <p class="footer-section-title" v-if="getLanguage === 'ru'">СОЦИАЛЬНЫЕ СЕТИ</p>
+        <p class="footer-section-title" v-if="getLanguage === 'en'">Social networks</p>
         <p style="margin-bottom: 15px">
           <a
             href="https://facebook.com/solemiophuketcondominium"
@@ -49,7 +54,12 @@
 </template>
 <script>
 export default {
-  name: "Footer"
+  name: "Footer",
+  computed: {
+    getLanguage(){
+      return localStorage.getItem('language');
+    }
+  },
 };
 </script>
 <style>

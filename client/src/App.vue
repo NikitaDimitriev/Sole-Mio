@@ -3,12 +3,21 @@
     <router-view/>
   </div>
 </template>
+<script>
+export default {
+  created() {
+    if (!localStorage.getItem("language")) {
+      localStorage.setItem("language", "ru");
+    }
+  }
+};
+</script>
 
 <style lang="scss">
 @import "app";
 
-.body{
-  font-family: 'Clear Sans Thin', sans-serif;
+.body {
+  font-family: "Clear Sans Thin", sans-serif;
 }
 
 .button {
@@ -24,11 +33,9 @@
   font-family: "Clear Sans Thin", sans-serif;
   cursor: pointer;
 }
-.button:hover{
+.button:hover {
   border: 1px solid #fff;
   color: #fff;
-  background: #2d5386
+  background: #2d5386;
 }
-
-
 </style>
