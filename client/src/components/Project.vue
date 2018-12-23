@@ -194,11 +194,11 @@
       <span class="plan-title" v-if="getLanguage === 'en'">Plan of appartmens</span>
       <div class="plan-list-img">
         <div class="plan-list-item" @click="showUnitImg('a')">
-          <img src="@/assets/image/plan1.png" style="cursor: pointer">
+          <img src="@/assets/image/plan4.png" style="cursor: pointer">
           <span>Unit A</span>
         </div>
         <div class="plan-list-item" @click="showUnitImg('b')">
-          <img src="@/assets/image/plan4.png" style="cursor: pointer">
+          <img src="@/assets/image/plan1.png" style="cursor: pointer">
           <span>Unit B</span>
         </div>
       </div>
@@ -251,14 +251,16 @@
         <div class="plan-a-numered-list">
           <span>1. Entry</span>
           <span>2. Foyer</span>
-          <span>4. Bathroom</span>
+          <span>3. Kitchen</span>
+          <span>4. Dinnig area</span>
           <span>5. Living area</span>
           <span>6. Bedroom</span>
-          <span>7. Balcony</span>
+          <span>7. Badroom</span>
+          <span>8. Balcony</span>
           <!-- <button class="button">Смотреть Больше</button> -->
         </div>
       </div>
-      <img src="@/assets/image/Unit_type_A.png" style="float: right;height: 555px">
+      <img src="@/assets/image/Unit_type_B.png" style="float: right;height: 555px">
     </div>
     <div class="plan-a">
       <div class="plan-slider">
@@ -308,15 +310,13 @@
         <div class="plan-a-numered-list">
           <span>1. Entry</span>
           <span>2. Foyer</span>
-          <span>3. Kitchen</span>
-          <span>4. Dinnig area</span>
+          <span>4. Bathroom</span>
           <span>5. Living area</span>
           <span>6. Bedroom</span>
-          <span>7. Badroom</span>
-          <span>8. Balcony</span>
+          <span>7. Balcony</span>
         </div>
       </div>
-      <img src="@/assets/image/Unit_type_B.png" style="float: right;height: 555px">
+      <img src="@/assets/image/Unit_type_A.png" style="float: right;height: 555px">
     </div>
     <div id="contacts">
       <div class="contacts-side">
@@ -380,10 +380,10 @@
     </div>
     <Footer></Footer>
     <div class="aWrap" v-if="aWrap" @click="closeWrap">
-      <img src="@/assets/image/Unit_type_A.png" class="wrapImg">
+      <img src="@/assets/image/Unit_type_B.png" class="wrapImg">
     </div>
     <div class="bWrap" v-if="bWrap" @click="closeWrap">
-      <img src="@/assets/image/Unit_type_B.png" class="wrapImg">
+      <img src="@/assets/image/Unit_type_A.png" class="wrapImg">
     </div>
   </div>
 </template>
@@ -408,7 +408,8 @@ export default {
       topSliderIndex: 1,
       interval: null,
       aWrap: false,
-      bWrap: false
+      bWrap: false,
+      activeColor: '#000'
     };
   },
   methods: {
@@ -759,5 +760,8 @@ export default {
 .wrapImg {
   z-index: 11;
   opacity: 1;
+}
+.activeColor{
+  color: #000;
 }
 </style>
