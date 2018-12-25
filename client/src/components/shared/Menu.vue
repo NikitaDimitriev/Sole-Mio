@@ -219,7 +219,7 @@ export default {
   font-size: 12px;
   letter-spacing: 0px;
   color: #fff;
-  font-family: "Clear Sans Thin";
+  font-family: "Clear Sans Bold";
   margin-top: 70px;
   cursor: pointer;
 }

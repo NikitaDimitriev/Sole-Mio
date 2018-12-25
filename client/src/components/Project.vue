@@ -385,6 +385,16 @@
     <div class="bWrap" v-if="bWrap" @click="closeWrap">
       <img src="@/assets/image/Unit_type_A.png" class="wrapImg">
     </div>
+    <div class="confirm-wraper" v-if="modalActive">
+      <div class="confirm">
+        <i class="fa fa-times close-button" @click="deactiveteModal()"></i>
+        <div class="confirm-title" v-if="getLanguage === 'ru'">Спасибо!</div>
+        <div class="confirm-title" v-if="getLanguage === 'en'">Thank you!</div>
+        <div class="confirm-subtitle" v-if="getLanguage === 'ru'">Наши менеджеры свяжуться с Вами</div>
+        <div class="confirm-subtitle" v-if="getLanguage === 'en'">Our managers will contact you</div>
+        <img src="@/assets/image/confirm-img.png" alt srcset>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -409,7 +419,8 @@ export default {
       interval: null,
       aWrap: false,
       bWrap: false,
-      activeColor: '#000'
+      activeColor: '#000',
+      modalActive: false
     };
   },
   methods: {
@@ -423,7 +434,10 @@ export default {
       this.$axios
         .post("https://solemiophuket.herokuapp.com/api/send-mail", data)
         .then(response => {
-          console.log(response);
+          this.modalActive = true;
+          this.name = "";
+          this.email = "";
+          this.coment = "";
         });
     },
     increeseSliderAindex() {
@@ -473,6 +487,9 @@ export default {
     closeWrap() {
       this.aWrap = false;
       this.bWrap = false;
+    },
+    deactiveteModal(){
+      this.modalActive = false;
     }
   },
   computed: {
@@ -626,6 +643,7 @@ export default {
   justify-content: center;
   align-items: center;
   height: 650px;
+  background: #f8f8f8;
 }
 
 .plan-a-list {

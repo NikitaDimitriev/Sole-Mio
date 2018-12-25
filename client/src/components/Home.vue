@@ -235,6 +235,16 @@
       </div>
     </div>
     <Footer></Footer>
+    <div class="confirm-wraper" v-if="modalActive">
+      <div class="confirm">
+        <i class="fa fa-times close-button" @click="deactiveteModal()"></i>
+        <div class="confirm-title" v-if="getLanguage === 'ru'">Спасибо!</div>
+        <div class="confirm-title" v-if="getLanguage === 'en'">Thank you!</div>
+        <div class="confirm-subtitle" v-if="getLanguage === 'ru'">Наши менеджеры свяжуться с Вами</div>
+        <div class="confirm-subtitle" v-if="getLanguage === 'en'">Our managers will contact you</div>
+        <img src="@/assets/image/confirm-img.png" alt srcset>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -253,7 +263,8 @@ export default {
       email: "",
       coment: "",
       homeSliderIndex: 1,
-      language: localStorage.getItem('language')
+      language: localStorage.getItem('language'),
+      modalActive: false
       // get language(){
       //   return localStorage.getItem('language');
       // }
@@ -270,7 +281,10 @@ export default {
       this.$axios
         .post("https://solemiophuket.herokuapp.com/api/send-mail", data)
         .then(response => {
-          console.log(response);
+          this.modalActive = true;
+          this.name = "";
+          this.email = "";
+          this.coment = "";
         });
     },
     increeseSliderTop() {
@@ -292,6 +306,9 @@ export default {
     scrollToB() {
       this.$router.push({path: '/project', hash:"#typeB"})
     },
+    deactiveteModal(){
+      this.modalActive = false;
+    }
   },
   computed: {
     getLanguage(){
@@ -386,7 +403,6 @@ export default {
 #concept {
   background-color: #d5d5d5;
   width: 100%;
-  height: 80vh;
 }
 .concept-content {
   display: flex;
