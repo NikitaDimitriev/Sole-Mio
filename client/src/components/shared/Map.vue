@@ -8,11 +8,7 @@
     </label>
     <br/> -->
 
-    <GmapMap style="width: 700px; height: 500px;" :zoom="12" :center="{lat: 7.996769, lng: 98.302661}">
-      <!-- <GmapMarker v-for="(marker, index) in markers"
-        :key="index"
-        :position="marker.position"
-        /> -->
+    <GmapMap class="map-container" :zoom="12" :center="{lat: 7.996769, lng: 98.302661}">
       <GmapMarker
         :position="{
           lat: 7.996769,
@@ -53,3 +49,10 @@ export default {
   }
 }
 </script>
+
+<style>
+.map-container{
+  width: 25%;
+  height: 50%;
+}
+</style>

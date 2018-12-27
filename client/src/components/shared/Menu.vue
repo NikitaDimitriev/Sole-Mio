@@ -1,13 +1,13 @@
 <template>
   <div id="menu">
-    <div class="pin-to-top" :class="{scrolled: scrolled}">
+    <div class="pin-to-top" :class="{scrolled: scrolled}" v-if="deviceWidth > 450">
       <div class="top-menu">
         <div class="top-menu-left">
           <i class="fa fa-bars burger" @click="openNav()"></i>
           <span class="menu-title" @click="openNav()">MENU</span>
         </div>
         <div>
-          <span>  </span>
+          <span></span>
         </div>
         <div class="top-menu-logo">
           <router-link to="/">
@@ -31,17 +31,36 @@
             <i class="fa fa-instagram"></i>
           </a>
         </div>
-          <div class="language-choose">
-            <span @click="changeToRu()">RU</span>
-            |
-            <span @click="changeToEn()">EN</span>
-          </div>
+        <div class="language-choose">
+          <span @click="changeToRu()">RU</span>
+          |
+          <span @click="changeToEn()">EN</span>
+        </div>
+      </div>
+    </div>
+    <div class="pin-to-top" v-if="deviceWidth < 450" :class="{scrolled: scrolled}">
+      <div class="mobile-menu">
+        <div class="top-menu-logo">
+          <router-link to="/">
+            <img src="@/assets/image/logo-white.png" v-if="!scrolled">
+            <img src="@/assets/image/Logo_SoleMia_color.png" v-if="scrolled">
+          </router-link>
+        </div>
+        <div class="top-menu-mobile">
+          <i class="fa fa-bars burger" @click="openNav()"></i>
+          <span class="menu-title" @click="openNav()">MENU</span>
+        </div>
       </div>
     </div>
     <div id="mySidenav" class="sidenav">
       <span class="closebtn" @click="closeNav()">
         &times;
         <span style="font-size: 12px">MENU</span>
+        <div class="language-choose">
+          <span @click="changeToRu()">RU</span>
+          |
+          <span @click="changeToEn()">EN</span>
+        </div>
       </span>
       <router-link to="/" v-if="getLanguage === 'ru'">Главная</router-link>
       <router-link to="/project" v-if="getLanguage === 'ru'">Проект</router-link>
@@ -61,14 +80,21 @@ export default {
   data() {
     return {
       activeMenu: false,
-      scrolled: false
+      scrolled: false,
+      deviceWidth: window.innerWidth
     };
   },
   methods: {
     openNav() {
-      document.getElementById("mySidenav").style.width = "40%";
+      if (this.deviceWidth < 450) {
+        document.getElementById("mySidenav").style.width = "100%";
+
+        document.getElementById("mySidenav").classList.add("mobile-nav");
+      } else {
+        document.getElementById("mySidenav").style.width = "40%";
+      }
       document.getElementById("mySidenav").style.padding = "60px 0 0 125px";
-      document.getElementById("mySidenav").style.zIndex = "6";
+      document.getElementById("mySidenav").style.zIndex = "13";
     },
     closeNav() {
       document.getElementById("mySidenav").style.width = "0";
@@ -91,6 +117,7 @@ export default {
   },
   created() {
     window.addEventListener("scroll", this.handleScroll);
+    console.log(this.deviceWidth);
   },
   destroyed() {
     window.removeEventListener("scroll", this.handleScroll);
@@ -104,11 +131,19 @@ export default {
 </script>
 
 <style lang="css">
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
 .pin-to-top {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 5;
+  z-index: 12;
   width: 100%;
 }
 .scrolled {
@@ -225,5 +260,12 @@ export default {
 }
 .scrolled .language-choose {
   color: #cacaca;
+}
+.mobile-menu {
+  padding: 10px;
+  width: calc(100% - 10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 </style>

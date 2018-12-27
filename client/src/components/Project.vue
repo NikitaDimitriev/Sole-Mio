@@ -203,7 +203,50 @@
         </div>
       </div>
     </div>
-    <div class="plan-a">
+    <div class="plan-a" v-if="deviceWidth>480">
+      <div class="plan-slider">
+        <div class="service-slide1">
+          <div class="service-slide1-content">
+            <div class="slide1-card-plan-a" id="typeA">
+              <div class="indicators-service">
+                <span
+                  style="margin-right: 5px;cursor: pointer"
+                  @click="decreeceSliderAindex()"
+                >&#10229;</span>
+                <span @click="increeseSliderAindex()" style="cursor: pointer">&#10230;</span>
+              </div>
+              <div class="controll-numbers" style="margin-top: 15px; margin-bottom: 54px">
+                <span style="cursor: pointer" @click="sliderAindex = 1">01</span>
+                <span style="cursor: pointer" @click="sliderAindex = 2">02</span>
+                <span style="cursor: pointer" @click="sliderAindex = 3">03</span>
+                <span style="cursor: pointer" @click="sliderAindex = 4">04</span>
+                <span style="cursor: pointer" @click="sliderAindex = 5">05</span>
+              </div>
+              <span class="plan-slider-title">
+                Unit type A:
+                Deluxe, 57 m2
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="plan-slider-img" v-if="sliderAindex === 1">
+        <img src="@/assets/image/17_Deluxe.jpg" class="animateScale">
+      </div>
+      <div class="plan-slider-img" v-if="sliderAindex === 2">
+        <img src="@/assets/image/18_Deluxe.jpg" class="animateScale">
+      </div>
+      <div class="plan-slider-img" v-if="sliderAindex === 3">
+        <img src="@/assets/image/19_Deluxe.jpg" class="animateScale">
+      </div>
+      <div class="plan-slider-img" v-if="sliderAindex === 4">
+        <img src="@/assets/image/20_Deluxe.jpg" class="animateScale">
+      </div>
+      <div class="plan-slider-img" v-if="sliderAindex === 5">
+        <img src="@/assets/image/21_Deluxe.jpg" class="animateScale">
+      </div>
+    </div>
+    <div class="plan-a-mob" v-if="deviceWidth<480">
       <div class="plan-slider">
         <div class="service-slide1">
           <div class="service-slide1-content">
@@ -260,9 +303,14 @@
           <!-- <button class="button">Смотреть Больше</button> -->
         </div>
       </div>
-      <img src="@/assets/image/Unit_type_B.png" style="float: right;height: 555px">
+      <img
+        src="@/assets/image/Unit_type_B.png"
+        style="float: right;height: 555px"
+        v-if="deviceWidth>480"
+      >
+      <img src="@/assets/image/Unit_type_B.png" v-if="deviceWidth<480">
     </div>
-    <div class="plan-a">
+    <div class="plan-a" v-if="deviceWidth>480">
       <div class="plan-slider">
         <div class="service-slide1">
           <div class="service-slide1-content">
@@ -305,6 +353,49 @@
         <img src="@/assets/image/16_Universal.jpg" class="animateScale">
       </div>
     </div>
+    <div class="plan-a-mob" v-if="deviceWidth<480">
+      <div class="plan-slider">
+        <div class="service-slide1">
+          <div class="service-slide1-content">
+            <div class="slide1-card-plan-a" id="typeB">
+              <div class="indicators-service">
+                <span
+                  style="margin-right: 5px; cursor: pointer"
+                  @click="decreeceSliderBindex()"
+                >&#10229;</span>
+                <span @click="increeseSliderBindex()" style="cursor: pointer">&#10230;</span>
+              </div>
+              <div class="controll-numbers" style="margin-top: 15px; margin-bottom: 54px">
+                <span style="cursor: pointer" @click="sliderBindex = 1">01</span>
+                <span style="cursor: pointer" @click="sliderBindex = 2">02</span>
+                <span style="cursor: pointer" @click="sliderBindex = 3">03</span>
+                <span style="cursor: pointer" @click="sliderBindex = 4">04</span>
+                <span style="cursor: pointer" @click="sliderBindex = 5">05</span>
+              </div>
+              <span class="plan-slider-title">
+                Unit type B:
+                Universal, 36 m2
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+            <div class="plan-slider-img" v-if="sliderBindex === 1">
+        <img src="@/assets/image/12_Universal.jpg" class="animateScale">
+      </div>
+      <div class="plan-slider-img" v-if="sliderBindex === 2">
+        <img src="@/assets/image/13_Universal.jpg" class="animateScale">
+      </div>
+      <div class="plan-slider-img" v-if="sliderBindex === 3">
+        <img src="@/assets/image/14_Universal.jpg" class="animateScale">
+      </div>
+      <div class="plan-slider-img" v-if="sliderBindex === 4">
+        <img src="@/assets/image/15_Universal.jpg" class="animateScale">
+      </div>
+      <div class="plan-slider-img" v-if="sliderBindex === 5">
+        <img src="@/assets/image/16_Universal.jpg" class="animateScale">
+      </div>
+    </div>
     <div class="plan-a-list">
       <div class="plan-a-list-left">
         <div class="plan-a-numered-list">
@@ -316,7 +407,12 @@
           <span>7. Balcony</span>
         </div>
       </div>
-      <img src="@/assets/image/Unit_type_A.png" style="float: right;height: 555px">
+      <img
+        src="@/assets/image/Unit_type_A.png"
+        style="float: right;height: 555px"
+        v-if="deviceWidth>480"
+      >
+      <img src="@/assets/image/Unit_type_A.png" v-if="deviceWidth<480">
     </div>
     <div id="contacts">
       <div class="contacts-side">
@@ -419,8 +515,9 @@ export default {
       interval: null,
       aWrap: false,
       bWrap: false,
-      activeColor: '#000',
-      modalActive: false
+      activeColor: "#000",
+      modalActive: false,
+      deviceWidth: window.innerWidth
     };
   },
   methods: {
@@ -488,7 +585,7 @@ export default {
       this.aWrap = false;
       this.bWrap = false;
     },
-    deactiveteModal(){
+    deactiveteModal() {
       this.modalActive = false;
     }
   },
@@ -505,7 +602,6 @@ export default {
   padding: 50px 127px 50px 127px;
   display: flex;
   justify-content: center;
-  align-items: center;
   align-items: center;
 }
 
@@ -742,10 +838,6 @@ export default {
     opacity: 1;
   }
 }
-.top-slider-img {
-  width: 100%;
-  height: 100%;
-}
 .aWrap {
   position: fixed;
   top: 0;
@@ -779,7 +871,54 @@ export default {
   z-index: 11;
   opacity: 1;
 }
-.activeColor{
+.activeColor {
   color: #000;
+}
+@media screen and (max-width: 480px) {
+  .description-project {
+    flex-direction: column;
+    padding: 20px;
+  }
+  .description-project-card {
+    margin-top: 10px;
+  }
+  .advantages-card {
+    margin-bottom: 20px;
+    padding: 10px;
+    flex-direction: column;
+  }
+  .advantages-card-title {
+    width: unset;
+    padding: 15px;
+  }
+  .advantages-card {
+    height: unset;
+  }
+  .advantages-card-icon-section {
+    width: unset;
+  }
+  .slide1-card-plan-a {
+    height: unset;
+    width: 100%;
+    padding: 5px;
+  }
+  .plan-slider-title {
+    font-size: 24px;
+    letter-spacing: unset;
+  }
+  .plan-slider-img {
+    width: 100%;
+    height: unset;
+  }
+  .plan-slider {
+    margin-right: unset;
+  }
+  .plan-a-list-left {
+    width: 100%;
+  }
+  .plan-a-list {
+    padding: 20px;
+    height: unset;
+  }
 }
 </style>

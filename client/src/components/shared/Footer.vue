@@ -5,10 +5,10 @@
         <div class="footer-logo">
           <img src="@/assets/image/sole-mio-logo3.png">
         </div>
-        <p style="color: #aaaaaa; font-size:18px">
+        <span style="color: #aaaaaa; font-size:18px" class="phones">
           <i class="fa fa-phone" style="margin-top: 15px;"></i> +66 81 73 71 687 <br>
           <i class="fa fa-phone" style="margin-top: 15px;"></i> +66 84 84 22 111 <br>
-        </p>
+        </span>
         <p style="color: #aaaaaa; margin-top: 15px; margin-bottom: 15px;font-size:18px" >
           <i class="fa fa-envelope" aria-hidden="true"></i> sale@solemiophuket.com
         </p>
@@ -138,5 +138,17 @@ export default {
   font-size: 14px;
   color: #aaaaaa;
   font-family: "Clear Sans Thin";
+}
+
+@media screen and (max-width: 480px){
+  #footer{
+    padding: 10px;
+  }
+  .footer-top{
+    flex-direction: column;
+  }
+  .phones{
+    width: 100%;
+  }
 }
 </style>

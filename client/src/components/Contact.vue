@@ -156,13 +156,6 @@ export default {
   left: 0;
   position: absolute;
 }
-.pin-to-top {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  width: 100%;
-}
 .hamburger:focus {
   outline: none;
 }

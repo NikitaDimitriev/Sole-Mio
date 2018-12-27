@@ -4,7 +4,7 @@
     <div id="carousel" class="carousel">
       <div class="slides">
         <div class="slide" data-state="active">
-          <div class="slide1-content">
+          <div class="slide1-content slide1-content-mob">
             <div class="slide1-content-inner">
               <span class="slide1-title" v-if="getLanguage === 'ru'">Добро пожаловать на борт –</span>
               <span class="slide1-title" v-if="getLanguage === 'ru'">Sole Mio поднимает паруса</span>
@@ -18,18 +18,10 @@
             </div>
           </div>
           <div class="top-slider-img" v-if="homeSliderIndex === 1">
-            <img
-              src="@/assets/image/titel_img.png"
-              style="height: 100%; width: 100%"
-              class="background-slider animateScale"
-            >
+            <img src="@/assets/image/titel_img.png" class="background-slider animateScale">
           </div>
           <div class="top-slider-img" v-if="homeSliderIndex === 2">
-            <img
-              src="@/assets/image/title-home.jpg"
-              style="height: 100%; width: 100%"
-              class="background-slider animateScale"
-            >
+            <img src="@/assets/image/title-home.jpg" class="background-slider animateScale">
           </div>
         </div>
       </div>
@@ -44,30 +36,40 @@
         <span class="concept-content-title" v-if="getLanguage === 'en'">Project description</span>
         <div class="concept-content-text-section">
           <span
-            class="concept-content-text" v-if="getLanguage === 'ru'"
+            class="concept-content-text"
+            v-if="getLanguage === 'ru'"
           >Девелоперам на Пхукете приходится прикладывать немало усилий, чтобы выделить свои проекты из общего ряда предложений на богатом рынке островной недвижимости.</span>
           <span
-            class="concept-content-text" v-if="getLanguage === 'en'"
+            class="concept-content-text"
+            v-if="getLanguage === 'en'"
           >Developers in Phuket go out of their way to set their projects apart on the island’s busy property market.</span>
           <span
-            class="concept-content-text" v-if="getLanguage === 'ru'"
+            class="concept-content-text"
+            v-if="getLanguage === 'ru'"
           >Кондоминиум Sole Mio – тот редкий случай, когда ничего делать не надо. Достаточно одного взгляда на это сочетание круизного лайнера и жилого комплекса, чтобы убедиться, насколько он уникален.</span>
           <span
-            class="concept-content-text" v-if="getLanguage === 'ru'"
+            class="concept-content-text"
+            v-if="getLanguage === 'ru'"
           >Новый кондоминиум Sole Mio у пляжа Банг-Тао может похвастаться немалым набором козырей. Начать стоит с расположения – всего 150 м по прямой линии от пляжа и 300 м неспешным шагом по удобному маршруту.</span>
           <span
-            class="concept-content-text" v-if="getLanguage === 'ru'"
+            class="concept-content-text"
+            v-if="getLanguage === 'ru'"
           >Пляж сам по себе тоже примечателен, поскольку речь идет о том участке Банг-Тао (второго по протяженности пляжа Пхукета), где до сих пор жива аутентичная пхукетская атмосфера. Вдоль побережья выстроились небольшие местные ресторанчики и регги-бары, где приятно будет встретить закат за едой и напитками на ласкающем ноги теплом песке. Если же хочется чего-то уровнем повыше, то достаточно небольшой прогулки к югу, где расположился Catch, один из лучших пляжных клубов острова. А на небольшом расстоянии к северу находится широкий ассортимент люксовых отелей Лагуны, славящейся своими изысканным ресторанами, СПА-центрами и полями для гольфа.</span>
         </div>
         <span
-            class="concept-content-text" v-if="getLanguage === 'en'"
-          >Sole Mio doesn’t have to. One look at it proves that it’s special.</span>
-          <span
-            class="concept-content-text" v-if="getLanguage === 'en'" style="width:50%"
-          >This new condominium project coming up in Bang Tao has a lot going on for it. Let’s start with the location – just 150m from the beach in a straight line, and a short 300m walk to get there.</span>
-          <span
-            class="concept-content-text" v-if="getLanguage === 'en'" style="width:50%"
-          >And the beach itself is quite special too – it’s the section of Bang Tao, Phuket’s second longest stretch of sand, that still preserves an authentic island feel. Lined with small local restaurants and reggae bars, it al-lows you to enjoy a sunset meal or drink while experiencing the feel of warm sand under your feet. Looking for something a little less rustic? A short walk south and you end up at one of Phuket’s best beach clubs, Catch; a short stroll to the north - the luxurious resorts of Laguna Phuket with their fine dining restaurants, spas and a golf course await.</span>
+          class="concept-content-text"
+          v-if="getLanguage === 'en'"
+        >Sole Mio doesn’t have to. One look at it proves that it’s special.</span>
+        <span
+          class="concept-content-text"
+          v-if="getLanguage === 'en'"
+          style="width:50%"
+        >This new condominium project coming up in Bang Tao has a lot going on for it. Let’s start with the location – just 150m from the beach in a straight line, and a short 300m walk to get there.</span>
+        <span
+          class="concept-content-text"
+          v-if="getLanguage === 'en'"
+          style="width:50%"
+        >And the beach itself is quite special too – it’s the section of Bang Tao, Phuket’s second longest stretch of sand, that still preserves an authentic island feel. Lined with small local restaurants and reggae bars, it al-lows you to enjoy a sunset meal or drink while experiencing the feel of warm sand under your feet. Looking for something a little less rustic? A short walk south and you end up at one of Phuket’s best beach clubs, Catch; a short stroll to the north - the luxurious resorts of Laguna Phuket with their fine dining restaurants, spas and a golf course await.</span>
         <!-- <div class="button">
           <p class="text-button">ЧИТАТЬ БОЛЬШЕ</p>
         </div>-->
@@ -79,25 +81,30 @@
           Современный
           компелекс на
         </span>
-        <span class="complex-card-title" style="font-family: 'Anglecia Pro Display Bold'" v-if="getLanguage === 'ru'"> 
+        <span
+          class="complex-card-title"
+          style="font-family: 'Anglecia Pro Display Bold'"
+          v-if="getLanguage === 'ru'"
+        >
           лазурном берегу
           Пхукета
         </span>
-        <span class="complex-card-title" v-if="getLanguage === 'en'">
-          Modern project on
-        </span>
-        <span class="complex-card-title" style="font-family: 'Anglecia Pro Display Bold'" v-if="getLanguage === 'en'">
-          asure beach of Phuket
-        </span>
+        <span class="complex-card-title" v-if="getLanguage === 'en'">Modern project on</span>
+        <span
+          class="complex-card-title"
+          style="font-family: 'Anglecia Pro Display Bold'"
+          v-if="getLanguage === 'en'"
+        >asure beach of Phuket</span>
         <div class="complex-content-text-section">
           <span class="concept-content-text" v-if="getLanguage === 'ru'">
             Sole Mio Condominium является совместным проектом надежной команды известных экспертов по
             недвижимости на острове Пхукет – девелоперской компании Phuket Asialand и агентства
             недвижимости Railand Property International.
           </span>
-          <span class="concept-content-text" v-if="getLanguage === 'en'">
-            Sole Mio Condominium is the brainchild of a trusted team of well-known Phuket property experts — Phuket Asialand as a developer company on the one part and Railand Pro­ perty International as a real esate agency on the other part.
-          </span>
+          <span
+            class="concept-content-text"
+            v-if="getLanguage === 'en'"
+          >Sole Mio Condominium is the brainchild of a trusted team of well-known Phuket property experts — Phuket Asialand as a developer company on the one part and Railand Pro­ perty International as a real esate agency on the other part.</span>
           <!-- <div class="button" style="border: none; margin-top: 30px">
             <p class="text-button">ЧИТАТЬ БОЛЬШЕ</p>
           </div>-->
@@ -130,7 +137,7 @@
                   </ul>
                 </div>
                 <div class="card__footer">
-                  <div class="price price__bl">    </div>
+                  <div class="price price__bl"></div>
                   <button class="button" @click="scrollToA" v-if="getLanguage === 'ru'">СМОТРЕТЬ</button>
                   <button class="button" @click="scrollToA" v-if="getLanguage === 'en'">ABOUT</button>
                 </div>
@@ -155,7 +162,7 @@
                   </ul>
                 </div>
                 <div class="card__footer">
-                  <div class="price price__bl">   </div>
+                  <div class="price price__bl"></div>
                   <button class="button" @click="scrollToB" v-if="getLanguage === 'ru'">СМОТРЕТЬ</button>
                   <button class="button" @click="scrollToB" v-if="getLanguage === 'en'">ABOUT</button>
                 </div>
@@ -263,7 +270,7 @@ export default {
       email: "",
       coment: "",
       homeSliderIndex: 1,
-      language: localStorage.getItem('language'),
+      language: localStorage.getItem("language"),
       modalActive: false
       // get language(){
       //   return localStorage.getItem('language');
@@ -301,20 +308,20 @@ export default {
     },
 
     scrollToA() {
-      this.$router.push({path: '/project', hash:"#typeA"})
+      this.$router.push({ path: "/project", hash: "#typeA" });
     },
     scrollToB() {
-      this.$router.push({path: '/project', hash:"#typeB"})
+      this.$router.push({ path: "/project", hash: "#typeB" });
     },
-    deactiveteModal(){
+    deactiveteModal() {
       this.modalActive = false;
     }
   },
   computed: {
-    getLanguage(){
-      return localStorage.getItem('language');
+    getLanguage() {
+      return localStorage.getItem("language");
     }
-  },
+  }
 };
 </script>
 <style lang="css">
@@ -338,7 +345,6 @@ export default {
   width: 100%;
   font-size: 3em;
   color: white;
-  line-height: 400px;
   text-align: center;
   opacity: 0;
   transition: opacity 1000ms;
@@ -352,11 +358,11 @@ export default {
 }
 
 .slide1-title {
-  font-size: 48px;
+  font-size: 1em;
   letter-spacing: 1px;
   color: #fefefe;
   font-family: "Anglecia Pro Display", sans-serif;
-  height: 48px;
+  height: 1em;
 }
 
 .slide1-subtitle {
@@ -678,5 +684,74 @@ input:focus ~ .highlight {
 
 .card__l {
   font-family: "Clear Sans Thin";
+}
+.top-slider-img {
+  width: 100%;
+  height: 100%;
+}
+.top-slider-img img {
+  width: 100%;
+  height: 100%;
+}
+
+@media only screen and (max-width: 480px) {
+  .top-menu-logo{
+    height: 70px;
+  }
+  .slide1-content {
+    height: calc(50% - 50px);
+    width: 100%;
+    position: absolute;
+    padding-top: 35%;
+  }
+  .top-slider-img {
+    height: 50vh !important ;
+  }
+  .slide1-title {
+    font-size: 24px;
+  }
+  .carousel {
+    position: relative;
+    width: 100wh;
+    height: 50vh;
+  }
+  .indicators {
+    position: absolute;
+    bottom: 30px;
+    right: 20px;
+  }
+  .concept-content-text-section{
+    width: 80%;
+  }
+  #complex{
+    height: unset;
+    flex-direction: column;
+  }
+  .complex-card{
+    width: 100%;
+    height: unset;
+    padding: 50px;
+  }
+  .complex-card-title{
+    font-size: 24px;
+    line-height: 35px;
+  }
+  .complex-img{
+    width: 100%;
+    height: unset;
+  }
+  .projects-img{
+    display: flex;
+    flex-direction: column;
+  }
+  .projects-img img{
+    width: 80%;
+  }
+  #projects{
+    height: unset;
+  }
+  .projects-title{
+    margin: 20px;
+  }
 }
 </style>
