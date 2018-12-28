@@ -58,4 +58,16 @@ export default {
     height: 400px;
   }
 }
+@media only screen and (max-width: 375px) {
+  .map-container {
+    width: 355px;
+    height: 400px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .map-container {
+    width: 300px;
+    height: 400px;
+  }
+}
 </style>

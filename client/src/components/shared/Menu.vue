@@ -268,4 +268,13 @@ export default {
   justify-content: space-between;
   align-items: center;
 }
+
+@media only screen and (max-width: 320px){
+  body{
+    width: 320px;
+  }
+  .pin-to-top{
+    width: 320px;
+  }
+}
 </style>
