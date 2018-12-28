@@ -753,5 +753,15 @@ input:focus ~ .highlight {
   .projects-title{
     margin: 20px;
   }
+  .contacts-map{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 15px 0;
+  }
+  #contacts{
+    flex-direction: column;
+    height: unset;
+  }
 }
 </style>
