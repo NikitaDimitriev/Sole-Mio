@@ -55,24 +55,19 @@
             class="concept-content-text"
             v-if="getLanguage === 'ru'"
           >Пляж сам по себе тоже примечателен, поскольку речь идет о том участке Банг-Тао (второго по протяженности пляжа Пхукета), где до сих пор жива аутентичная пхукетская атмосфера. Вдоль побережья выстроились небольшие местные ресторанчики и регги-бары, где приятно будет встретить закат за едой и напитками на ласкающем ноги теплом песке. Если же хочется чего-то уровнем повыше, то достаточно небольшой прогулки к югу, где расположился Catch, один из лучших пляжных клубов острова. А на небольшом расстоянии к северу находится широкий ассортимент люксовых отелей Лагуны, славящейся своими изысканным ресторанами, СПА-центрами и полями для гольфа.</span>
+          <span
+            class="concept-content-text"
+            v-if="getLanguage === 'en'"
+          >Sole Mio doesn’t have to. One look at it proves that it’s special.</span>
+          <span
+            class="concept-content-text"
+            v-if="getLanguage === 'en'"
+          >This new condominium project coming up in Bang Tao has a lot going on for it. Let’s start with the location – just 150m from the beach in a straight line, and a short 300m walk to get there.</span>
+          <span
+            class="concept-content-text"
+            v-if="getLanguage === 'en'"
+          >And the beach itself is quite special too – it’s the section of Bang Tao, Phuket’s second longest stretch of sand, that still preserves an authentic island feel. Lined with small local restaurants and reggae bars, it al-lows you to enjoy a sunset meal or drink while experiencing the feel of warm sand under your feet. Looking for something a little less rustic? A short walk south and you end up at one of Phuket’s best beach clubs, Catch; a short stroll to the north - the luxurious resorts of Laguna Phuket with their fine dining restaurants, spas and a golf course await.</span>
         </div>
-        <span
-          class="concept-content-text"
-          v-if="getLanguage === 'en'"
-        >Sole Mio doesn’t have to. One look at it proves that it’s special.</span>
-        <span
-          class="concept-content-text"
-          v-if="getLanguage === 'en'"
-          style="width:50%"
-        >This new condominium project coming up in Bang Tao has a lot going on for it. Let’s start with the location – just 150m from the beach in a straight line, and a short 300m walk to get there.</span>
-        <span
-          class="concept-content-text"
-          v-if="getLanguage === 'en'"
-          style="width:50%"
-        >And the beach itself is quite special too – it’s the section of Bang Tao, Phuket’s second longest stretch of sand, that still preserves an authentic island feel. Lined with small local restaurants and reggae bars, it al-lows you to enjoy a sunset meal or drink while experiencing the feel of warm sand under your feet. Looking for something a little less rustic? A short walk south and you end up at one of Phuket’s best beach clubs, Catch; a short stroll to the north - the luxurious resorts of Laguna Phuket with their fine dining restaurants, spas and a golf course await.</span>
-        <!-- <div class="button">
-          <p class="text-button">ЧИТАТЬ БОЛЬШЕ</p>
-        </div>-->
       </div>
     </div>
     <div id="complex">
@@ -695,6 +690,9 @@ input:focus ~ .highlight {
 }
 
 @media only screen and (max-width: 480px) {
+  .cards__item{
+    margin-bottom: unset;
+  }
   .top-menu-logo{
     height: 70px;
   }
@@ -752,6 +750,19 @@ input:focus ~ .highlight {
   }
   .projects-title{
     margin: 20px;
+  }
+  .contacts-map{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 15px 0;
+  }
+  #contacts{
+    flex-direction: column;
+    height: unset;
+  }
+  .card__slider-item{
+    width: 100%;
   }
 }
 </style>
