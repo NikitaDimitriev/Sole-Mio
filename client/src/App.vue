@@ -6,8 +6,9 @@
 <script>
 export default {
   created() {
+      localStorage.removeItem("language");
     if (!localStorage.getItem("language")) {
-      localStorage.setItem("language", "ru");
+      localStorage.setItem("language", "en");
     }
   }
 };
