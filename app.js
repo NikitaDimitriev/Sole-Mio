@@ -6,7 +6,7 @@ const methodOverride = require('method-override');
 const serveStatic = require('serve-static');
 const nodemailer = require('nodemailer');
 
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 80;
 
 app.use(bodyParser.json());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
